@@ -436,24 +436,24 @@ ShareMemorySDK data;
 	js["AIR_annunRamDoorR"] = data.RAM_DOOR_FUEL_DOOR_2_Light_Status != 0;
 	js["AIR_FltAltWindow"] = data.AIR_FltAltWindow != 0;
 	js["AIR_LandAltWindow"] = data.AIR_LandAltWindow != 0;
-	js["WARN_annunFLT_CONT"] = data.WARN_annunFLT_CONT != 0;
-	js["WARN_annunIRS"] = data.WARN_annunIRS != 0;
-	js["WARN_annunFUEL"] = data.WARN_annunFUEL != 0;
-	js["WARN_annunELEC"] = data.WARN_annunELEC != 0;
-	js["WARN_annunAPU"] = data.WARN_annunAPU != 0;
-	js["WARN_annunOVHT_DET"] = data.WARN_annunOVHT_DET != 0;
-	js["WARN_annunANTI_ICE"] = data.WARN_annunANTI_ICE != 0;
-	js["WARN_annunHYD"] = data.WARN_annunHYD != 0;
-	js["WARN_annunDOORS"] = data.WARN_annunDOORS != 0;
-	js["WARN_annunENG"] = data.WARN_annunENG != 0;
-	js["WARN_annunOVERHEAD"] = data.WARN_annunOVERHEAD != 0;
-	js["WARN_annunAIR_COND"] = data.WARN_annunAIR_COND != 0;
-	js["MAIN_annunSPEEDBRAKE_ARMED"] = data.MAIN_annunSPEEDBRAKE_ARMED != 0;
-	js["MAIN_annunSPEEDBRAKE_DO_NOT_ARM"] = data.MAIN_annunSPEEDBRAKE_DO_NOT_ARM != 0;
-	js["MAIN_annunSPEEDBRAKE_EXTENDED"] = data.MAIN_annunSPEEDBRAKE_EXTENDED != 0;
+	js["WARN_annunFLT_CONT"] = data.Warning_FLT_CONT_Light_Status != 0;
+	js["WARN_annunIRS"] = data.Warning_IRS_Light_Status != 0;
+	js["WARN_annunFUEL"] = data.Warning_FUEL_Light_Status != 0;
+	js["WARN_annunELEC"] = data.Warning_ELEC_Light_Status != 0;
+	js["WARN_annunAPU"] = data.Warning_APU_Light_Status != 0;
+	js["WARN_annunOVHT_DET"] = data.Warning_OVHT_Light_Status != 0;
+	js["WARN_annunANTI_ICE"] = data.Warning_ANTIICE_Light_Status != 0;
+	js["WARN_annunHYD"] = data.Warning_HYD_Light_Status != 0;
+	js["WARN_annunDOORS"] = data.Warning_DOORS_Light_Status != 0;
+	js["WARN_annunENG"] = data.Warning_ENG_Light_Status != 0;
+	js["WARN_annunOVERHEAD"] = data.Warning_OVERHEAD_Light_Status != 0;
+	js["WARN_annunAIR_COND"] = data.Warning_AIR_COND_Light_Status != 0;
+	js["MAIN_annunSPEEDBRAKE_ARMED"] = data.SPEED_BRAKE_ARMED_Light_Status != 0;
+	js["MAIN_annunSPEEDBRAKE_DO_NOT_ARM"] = data.SPEED_BRAKE_DO_NOT_ARM_Light_Status != 0;
+	js["MAIN_annunSPEEDBRAKE_EXTENDED"] = data.SPEEDBRAKES_EXTENDED_Light_Status != 0;
 	js["MAIN_annunSTAB_OUT_OF_TRIM"] = data.MAIN_annunSTAB_OUT_OF_TRIM != 0;
-	js["MAIN_annunANTI_SKID_INOP"] = data.MAIN_annunANTI_SKID_INOP != 0;
-	js["MAIN_annunAUTO_BRAKE_DISARM"] = data.MAIN_annunAUTO_BRAKE_DISARM != 0;
+	js["MAIN_annunANTI_SKID_INOP"] = data.ANTISKID_INOP_Light_Status != 0;
+	js["MAIN_annunAUTO_BRAKE_DISARM"] = data.AUTO_BRAKE_DISARM_Light_Status != 0;
 	js["MAIN_annunLE_FLAPS_TRANSIT"] = data.MAIN_annunLE_FLAPS_TRANSIT != 0;
 	js["MAIN_annunLE_FLAPS_EXT"] = data.MAIN_annunLE_FLAPS_EXT != 0;
 	js["HGS_annun_AIII"] = data.HGS_annun_AIII != 0;
@@ -469,7 +469,7 @@ ShareMemorySDK data;
 	js["HGS_annun_Bar"] = data.HGS_annun_Bar != 0;
 	js["HGS_annun_FAIL"] = data.HGS_annun_FAIL != 0;
 	js["GPWS_annunINOP"] = data.GPWS_annunINOP != 0;
-	js["PED_annunParkingBrake"] = data.PED_annunParkingBrake != 0;
+	js["PED_annunParkingBrake"] = data.Parking_Brake_Light_Status != 0;
 	js["FIRE_annunWHEEL_WELL"] = data.FIRE_annunWHEEL_WELL != 0;
 	js["FIRE_annunFAULT"] = data.FIRE_annunFAULT != 0;
 	js["FIRE_annunAPU_DET_INOP"] = data.FIRE_annunAPU_DET_INOP != 0;
@@ -497,10 +497,10 @@ ShareMemorySDK data;
 	js["DOOR_annunAFT_CARGO"] = data.DOOR_annunAFT_CARGO != 0;
 	js["DOOR_annunAFT_ENTRY"] = data.DOOR_annunAFT_ENTRY != 0;
 	js["DOOR_annunAFT_SERVICE"] = data.DOOR_annunAFT_SERVICE != 0;
-	js["AIR_annunAUTO_FAIL"] = data.AIR_annunAUTO_FAIL != 0;
-	js["AIR_annunOFFSCHED_DESCENT"] = data.AIR_annunOFFSCHED_DESCENT != 0;
-	js["AIR_annunALTN"] = data.AIR_annunALTN != 0;
-	js["AIR_annunMANUAL"] = data.AIR_annunMANUAL != 0;
+	js["AIR_annunAUTO_FAIL"] = data.AUTO_FAIL_Light_Status != 0;
+	js["AIR_annunOFFSCHED_DESCENT"] = data.OFF_SCHED_DESCENT_Light_Status != 0;
+	js["AIR_annunALTN"] = data.ALTN_Light_Status != 0;
+	js["AIR_annunMANUAL"] = data.MANUAL_Light_Status != 0;
 	js["IRS_annunALIGN_1"] = data.IRS_annunALIGN[0] != 0;
 	js["IRS_annunALIGN_2"] = data.IRS_annunALIGN[1] != 0;
 	js["IRS_annunON_DC_1"] = data.IRS_annunON_DC[0] != 0;
@@ -509,65 +509,65 @@ ShareMemorySDK data;
 	js["IRS_annunFAULT_2"] = data.IRS_annunFAULT[1] != 0;
 	js["IRS_annunDC_FAIL_1"] = data.IRS_annunDC_FAIL[0] != 0;
 	js["IRS_annunDC_FAIL_2"] = data.IRS_annunDC_FAIL[1] != 0;
-	js["ENG_annunREVERSER_1"] = data.ENG_annunREVERSER[0] != 0;
+	js["ENG_annunREVERSER_1"] = data.REVERSER_1_Light_Status != 0;
 	js["ENG_annunREVERSER_2"] = data.ENG_annunREVERSER[1] != 0;
-	js["ENG_annunENGINE_CONTROL_1"] = data.ENG_annunENGINE_CONTROL[0] != 0;
-	js["ENG_annunENGINE_CONTROL_2"] = data.ENG_annunENGINE_CONTROL[1] != 0;
+	js["ENG_annunENGINE_CONTROL_1"] = data.ENGINE_CONTROL_1_Light_Status != 0;
+	js["ENG_annunENGINE_CONTROL_2"] = data.ENGINE_CONTROL_2_Light_Status != 0;
 	js["ENG_annunALTN_1"] = data.ENG_annunALTN[0] != 0;
 	js["ENG_annunALTN_2"] = data.ENG_annunALTN[1] != 0;
-	js["FCTL_annunFC_LOW_PRESSURE_1"] = data.FCTL_annunFC_LOW_PRESSURE[0] != 0;
-	js["FCTL_annunFC_LOW_PRESSURE_2"] = data.FCTL_annunFC_LOW_PRESSURE[1] != 0;
+	js["FCTL_annunFC_LOW_PRESSURE_1"] = data.LOW_PRESSURE_A_Light_Status != 0;
+	js["FCTL_annunFC_LOW_PRESSURE_2"] = data.LOW_PRESSURE_B_Light_Status != 0;
 
-	js["FUEL_annunENG_VALVE_CLOSED_1"] = data.FUEL_annunENG_VALVE_CLOSED[0] != 0 != 0;
-	js["FUEL_annunENG_VALVE_CLOSED_2"] = data.FUEL_annunENG_VALVE_CLOSED[1] != 0 != 0;
-	js["FUEL_annunSPAR_VALVE_CLOSED_1"] = data.FUEL_annunSPAR_VALVE_CLOSED[0] != 0 != 0;
-	js["FUEL_annunSPAR_VALVE_CLOSED_2"] = data.FUEL_annunSPAR_VALVE_CLOSED[1] != 0 != 0;
+	js["FUEL_annunENG_VALVE_CLOSED_1"] = data.ENG_VALVE_CLOSED_Light_1_Status != 0 != 0;
+	js["FUEL_annunENG_VALVE_CLOSED_2"] = data.ENG_VALVE_CLOSED_Light_2_Status != 0 != 0;
+	js["FUEL_annunSPAR_VALVE_CLOSED_1"] = data.SPAR_VALVE_CLOSED_Light_1_Status != 0 != 0;
+	js["FUEL_annunSPAR_VALVE_CLOSED_2"] = data.SPAR_VALVE_CLOSED_Light_2_Status != 0 != 0;
 
-	js["FUEL_annunFILTER_BYPASS_1"] = data.FUEL_annunFILTER_BYPASS[0] != 0;
-	js["FUEL_annunFILTER_BYPASS_2"] = data.FUEL_annunFILTER_BYPASS[1] != 0;
-	js["FUEL_annunLOWPRESS_Fwd_1"] = data.FUEL_annunLOWPRESS_Fwd[0] != 0;
-	js["FUEL_annunLOWPRESS_Fwd_2"] = data.FUEL_annunLOWPRESS_Fwd[1] != 0;
-	js["FUEL_annunLOWPRESS_Aft_1"] = data.FUEL_annunLOWPRESS_Aft[0] != 0;
-	js["FUEL_annunLOWPRESS_Aft_2"] = data.FUEL_annunLOWPRESS_Aft[1] != 0;
-	js["FUEL_annunLOWPRESS_Ctr_1"] = data.FUEL_annunLOWPRESS_Ctr[0] != 0;
-	js["FUEL_annunLOWPRESS_Ctr_2"] = data.FUEL_annunLOWPRESS_Ctr[1] != 0;
-	js["ELEC_annunDRIVE_1"] = data.ELEC_annunDRIVE[0] != 0;
-	js["ELEC_annunDRIVE_2"] = data.ELEC_annunDRIVE[1] != 0;
-	js["ELEC_annunTRANSFER_BUS_OFF_1"] = data.ELEC_annunTRANSFER_BUS_OFF[0] != 0;
-	js["ELEC_annunTRANSFER_BUS_OFF_2"] = data.ELEC_annunTRANSFER_BUS_OFF[1] != 0;
-	js["ELEC_annunSOURCE_OFF_1"] = data.ELEC_annunSOURCE_OFF[0] != 0;
-	js["ELEC_annunSOURCE_OFF_2"] = data.ELEC_annunSOURCE_OFF[1] != 0;
-	js["ELEC_annunGEN_BUS_OFF_1"] = data.ELEC_annunGEN_BUS_OFF[0] != 0;
-	js["ELEC_annunGEN_BUS_OFF_2"] = data.ELEC_annunGEN_BUS_OFF[1] != 0;
-	js["ICE_annunOVERHEAT_1"] = data.ICE_annunOVERHEAT[0] != 0;
-	js["ICE_annunOVERHEAT_2"] = data.ICE_annunOVERHEAT[1] != 0;
-	js["ICE_annunOVERHEAT_3"] = data.ICE_annunOVERHEAT[2] != 0;
-	js["ICE_annunOVERHEAT_4"] = data.ICE_annunOVERHEAT[3] != 0;
-	js["ICE_annunON_1"] = data.ICE_annunON[0] != 0;
-	js["ICE_annunON_2"] = data.ICE_annunON[1] != 0;
-	js["ICE_annunON_3"] = data.ICE_annunON[2] != 0;
-	js["ICE_annunON_4"] = data.ICE_annunON[3] != 0;
-	js["ICE_annunVALVE_OPEN_1"] = data.ICE_annunVALVE_OPEN[0] != 0;
-	js["ICE_annunVALVE_OPEN_2"] = data.ICE_annunVALVE_OPEN[1] != 0;
-	js["ICE_annunCOWL_ANTI_ICE_1"] = data.ICE_annunCOWL_ANTI_ICE[0] != 0;
-	js["ICE_annunCOWL_ANTI_ICE_2"] = data.ICE_annunCOWL_ANTI_ICE[1] != 0;
-	js["ICE_annunCOWL_VALVE_OPEN_1"] = data.ICE_annunCOWL_VALVE_OPEN[0] != 0;
-	js["ICE_annunCOWL_VALVE_OPEN_2"] = data.ICE_annunCOWL_VALVE_OPEN[1] != 0;
-	js["HYD_annunLOW_PRESS_eng_1"] = data.HYD_annunLOW_PRESS_eng[0] != 0;
-	js["HYD_annunLOW_PRESS_eng_2"] = data.HYD_annunLOW_PRESS_eng[1] != 0;
-	js["HYD_annunLOW_PRESS_elec_1"] = data.HYD_annunLOW_PRESS_elec[0] != 0;
-	js["HYD_annunLOW_PRESS_elec_2"] = data.HYD_annunLOW_PRESS_elec[1] != 0;
-	js["HYD_annunOVERHEAT_elec_1"] = data.HYD_annunOVERHEAT_elec[0] != 0;
-	js["HYD_annunOVERHEAT_elec_2"] = data.HYD_annunOVERHEAT_elec[1] != 0;
-	js["AIR_annunZoneTemp_1"] = data.AIR_annunZoneTemp[0] != 0;
-	js["AIR_annunZoneTemp_2"] = data.AIR_annunZoneTemp[1] != 0;
-	js["AIR_annunZoneTemp_3"] = data.AIR_annunZoneTemp[2] != 0;
-	js["AIR_annunPackTripOff_1"] = data.AIR_annunPackTripOff[0] != 0;
-	js["AIR_annunPackTripOff_2"] = data.AIR_annunPackTripOff[1] != 0;
-	js["AIR_annunWingBodyOverheat_1"] = data.AIR_annunWingBodyOverheat[0] != 0;
-	js["AIR_annunWingBodyOverheat_2"] = data.AIR_annunWingBodyOverheat[1] != 0;
-	js["AIR_annunBleedTripOff_1"] = data.AIR_annunBleedTripOff[0] != 0;
-	js["AIR_annunBleedTripOff_2"] = data.AIR_annunBleedTripOff[1] != 0;
+	js["FUEL_annunFILTER_BYPASS_1"] = data.FILTER_BYPASS_Light_1_Status != 0;
+	js["FUEL_annunFILTER_BYPASS_2"] = data.FILTER_BYPASS_Light_2_Status != 0;
+	js["FUEL_annunLOWPRESS_Fwd_1"] = data.LOW_PRESSURE_Light_L_FWD_Status != 0;
+	js["FUEL_annunLOWPRESS_Fwd_2"] = data.LOW_PRESSURE_Light_R_FWD_Status != 0;
+	js["FUEL_annunLOWPRESS_Aft_1"] = data.LOW_PRESSURE_Light_L_AFT_Status != 0;
+	js["FUEL_annunLOWPRESS_Aft_2"] = data.LOW_PRESSURE_Light_R_AFT_Status != 0;
+	js["FUEL_annunLOWPRESS_Ctr_1"] = data.Fuel_CENTER_L_Switch_Status != 0;
+	js["FUEL_annunLOWPRESS_Ctr_2"] = data.Fuel_CENTER_R_Switch_Status != 0;
+	js["ELEC_annunDRIVE_1"] = data.ENG_1_DRIVE_Light_Status != 0;
+	js["ELEC_annunDRIVE_2"] = data.ENG_2_DRIVE_Light_Status != 0;
+	js["ELEC_annunTRANSFER_BUS_OFF_1"] = data.ENG_1_TRANSFER_BUS_OFF_Light_Status != 0;
+	js["ELEC_annunTRANSFER_BUS_OFF_2"] = data.ENG_2_TRANSFER_BUS_OFF_Light_Status != 0;
+	js["ELEC_annunSOURCE_OFF_1"] = data.ENG_1_SOURCE_OFF_Light_Status != 0;
+	js["ELEC_annunSOURCE_OFF_2"] = data.ENG_2_SOURCE_OFF_Light_Status != 0;
+	js["ELEC_annunGEN_BUS_OFF_1"] = data.ENG_1_GEN_OFF_BUS_Light_Status != 0;
+	js["ELEC_annunGEN_BUS_OFF_2"] = data.ENG_2_GEN_OFF_BUS_Light_Status != 0;
+	js["ICE_annunOVERHEAT_1"] = data.Window_OVERHEAT_Lights_1_Status != 0;
+	js["ICE_annunOVERHEAT_2"] = data.Window_OVERHEAT_Lights_2_Status != 0;
+	js["ICE_annunOVERHEAT_3"] = data.Window_OVERHEAT_Lights_3_Status != 0;
+	js["ICE_annunOVERHEAT_4"] = data.Window_OVERHEAT_Lights_4_Status != 0;
+	js["ICE_annunON_1"] = data.Window_Heat_ON_Lights_1_Status != 0;
+	js["ICE_annunON_2"] = data.Window_Heat_ON_Lights_2_Status != 0;
+	js["ICE_annunON_3"] = data.Window_Heat_ON_Lights_3_Status != 0;
+	js["ICE_annunON_4"] = data.Window_Heat_ON_Lights_4_Status != 0;
+	js["ICE_annunVALVE_OPEN_1"] = data.L_VALVE_OPEN_Lights_Status != 0;
+	js["ICE_annunVALVE_OPEN_2"] = data.R_VALVE_OPEN_Lights_Status != 0;
+	js["ICE_annunCOWL_ANTI_ICE_1"] = data.COWL_ANTI_ICE_Lights_1_Status != 0;
+	js["ICE_annunCOWL_ANTI_ICE_2"] = data.COWL_ANTI_ICE_Lights_2_Status != 0;
+	js["ICE_annunCOWL_VALVE_OPEN_1"] = data.COWL_VALVE_OPEN_Lights_1_Status != 0;
+	js["ICE_annunCOWL_VALVE_OPEN_2"] = data.COWL_VALVE_OPEN_Lights_2_Status != 0;
+	js["HYD_annunLOW_PRESS_eng_1"] = data.ENG_1_HYD_LOW_PRESSURE_Light_Status!= 0;
+	js["HYD_annunLOW_PRESS_eng_2"] = data.ENG_2_HYD_LOW_PRESSURE_Light_Status!= 0;
+	js["HYD_annunLOW_PRESS_elec_1"] = data.ELEC_1_HYD_LOW_PRESSURE_Light_Status != 0;
+	js["HYD_annunLOW_PRESS_elec_2"] = data.ELEC_2_HYD_LOW_PRESSURE_Light_Status != 0;
+	js["HYD_annunOVERHEAT_elec_1"] = data.ELEC_1_HYD_OVERHEAT_Light_Status != 0;
+	js["HYD_annunOVERHEAT_elec_2"] = data.ELEC_2_HYD_OVERHEAT_Light_Status != 0;
+	js["AIR_annunZoneTemp_1"] = data.ZONE_TEMP_Light_1_Status != 0;
+	js["AIR_annunZoneTemp_2"] = data.ZONE_TEMP_Light_2_Status != 0;
+	js["AIR_annunZoneTemp_3"] = data.ZONE_TEMP_Light_3_Status != 0;
+	js["AIR_annunPackTripOff_1"] = data.PACK_TRIP_OFF_1_Light_Status != 0;
+	js["AIR_annunPackTripOff_2"] = data.PACK_TRIP_OFF_2_Light_Status != 0;
+	js["AIR_annunWingBodyOverheat_1"] = data.WING_BODY_OVERHEAT_1_Light_Status != 0;
+	js["AIR_annunWingBodyOverheat_2"] = data.WING_BODY_OVERHEAT_2_Light_Status != 0;
+	js["AIR_annunBleedTripOff_1"] = data.BLEED_TRIP_OFF_1_Light_Status != 0;
+	js["AIR_annunBleedTripOff_2"] = data.BLEED_TRIP_OFF_2_Light_Status != 0;
 	js["WARN_annunFIRE_WARN_1"] = data.WARN_annunFIRE_WARN[0] != 0;
 	js["WARN_annunFIRE_WARN_2"] = data.WARN_annunFIRE_WARN[1] != 0;
 	js["WARN_annunMASTER_CAUTION_1"] = data.WARN_annunMASTER_CAUTION[0] != 0;
@@ -1479,77 +1479,77 @@ std::string Ifly737::buildJsonIfly737()
 	//	ngxData.AIR_LandAltWindow = data.AIR_LandAltWindow;
 	//	js["AIR_LandAltWindow"] = data.AIR_LandAltWindow != 0;
 	//}
-	if (ngxData.WARN_annunFLT_CONT != data.WARN_annunFLT_CONT) {
-		ngxData.WARN_annunFLT_CONT = data.WARN_annunFLT_CONT;
-		js["WARN_annunFLT_CONT"] = data.WARN_annunFLT_CONT != 0;
+	if (ngxData.Warning_FLT_CONT_Light_Status != data.Warning_FLT_CONT_Light_Status) {
+		ngxData.Warning_FLT_CONT_Light_Status = data.Warning_FLT_CONT_Light_Status;
+		js["WARN_annunFLT_CONT"] = data.Warning_FLT_CONT_Light_Status != 0;
 	}
-	if (ngxData.WARN_annunIRS != data.WARN_annunIRS) {
-		ngxData.WARN_annunIRS = data.WARN_annunIRS;
-		js["WARN_annunIRS"] = data.WARN_annunIRS != 0;
+	if (ngxData.Warning_IRS_Light_Status != data.Warning_IRS_Light_Status) {
+		ngxData.Warning_IRS_Light_Status = data.Warning_IRS_Light_Status;
+		js["WARN_annunIRS"] = data.Warning_IRS_Light_Status != 0;
 	}
-	if (ngxData.WARN_annunFUEL != data.WARN_annunFUEL) {
-		ngxData.WARN_annunFUEL = data.WARN_annunFUEL;
-		js["WARN_annunFUEL"] = data.WARN_annunFUEL != 0;
+	if (ngxData.Warning_FUEL_Light_Status != data.Warning_FUEL_Light_Status) {
+		ngxData.Warning_FUEL_Light_Status = data.Warning_FUEL_Light_Status;
+		js["WARN_annunFUEL"] = data.Warning_FUEL_Light_Status != 0;
 	}
-	if (ngxData.WARN_annunELEC != data.WARN_annunELEC) {
-		ngxData.WARN_annunELEC = data.WARN_annunELEC;
-		js["WARN_annunELEC"] = data.WARN_annunELEC != 0;
+	if (ngxData.Warning_ELEC_Light_Status != data.Warning_ELEC_Light_Status) {
+		ngxData.Warning_ELEC_Light_Status = data.Warning_ELEC_Light_Status;
+		js["WARN_annunELEC"] = data.Warning_ELEC_Light_Status != 0;
 	}
-	if (ngxData.WARN_annunAPU != data.WARN_annunAPU) {
-		ngxData.WARN_annunAPU = data.WARN_annunAPU;
-		js["WARN_annunAPU"] = data.WARN_annunAPU != 0;
+	if (ngxData.Warning_APU_Light_Status != data.Warning_APU_Light_Status) {
+		ngxData.Warning_APU_Light_Status = data.Warning_APU_Light_Status;
+		js["WARN_annunAPU"] = data.Warning_APU_Light_Status != 0;
 	}
-	if (ngxData.WARN_annunOVHT_DET != data.WARN_annunOVHT_DET) {
-		ngxData.WARN_annunOVHT_DET = data.WARN_annunOVHT_DET;
-		js["WARN_annunOVHT_DET"] = data.WARN_annunOVHT_DET != 0;
+	if (ngxData.Warning_OVHT_Light_Status != data.Warning_OVHT_Light_Status) {
+		ngxData.Warning_OVHT_Light_Status = data.Warning_OVHT_Light_Status;
+		js["WARN_annunOVHT_DET"] = data.Warning_OVHT_Light_Status != 0;
 	}
-	if (ngxData.WARN_annunANTI_ICE != data.WARN_annunANTI_ICE) {
-		ngxData.WARN_annunANTI_ICE = data.WARN_annunANTI_ICE;
-		js["WARN_annunANTI_ICE"] = data.WARN_annunANTI_ICE != 0;
+	if (ngxData.Warning_ANTIICE_Light_Status != data.Warning_ANTIICE_Light_Status) {
+		ngxData.Warning_ANTIICE_Light_Status = data.Warning_ANTIICE_Light_Status;
+		js["WARN_annunANTI_ICE"] = data.Warning_ANTIICE_Light_Status != 0;
 	}
-	if (ngxData.WARN_annunHYD != data.WARN_annunHYD) {
-		ngxData.WARN_annunHYD = data.WARN_annunHYD;
-		js["WARN_annunHYD"] = data.WARN_annunHYD != 0;
+	if (ngxData.Warning_HYD_Light_Status != data.Warning_HYD_Light_Status) {
+		ngxData.Warning_HYD_Light_Status = data.Warning_HYD_Light_Status;
+		js["WARN_annunHYD"] = data.Warning_HYD_Light_Status != 0;
 	}
-	if (ngxData.WARN_annunDOORS != data.WARN_annunDOORS) {
-		ngxData.WARN_annunDOORS = data.WARN_annunDOORS;
-		js["WARN_annunDOORS"] = data.WARN_annunDOORS != 0;
+	if (ngxData.Warning_DOORS_Light_Status != data.Warning_DOORS_Light_Status) {
+		ngxData.Warning_DOORS_Light_Status = data.Warning_DOORS_Light_Status;
+		js["WARN_annunDOORS"] = data.Warning_DOORS_Light_Status != 0;
 	}
-	if (ngxData.WARN_annunENG != data.WARN_annunENG) {
-		ngxData.WARN_annunENG = data.WARN_annunENG;
-		js["WARN_annunENG"] = data.WARN_annunENG != 0;
+	if (ngxData.Warning_ENG_Light_Status != data.Warning_ENG_Light_Status) {
+		ngxData.Warning_ENG_Light_Status = data.Warning_ENG_Light_Status;
+		js["WARN_annunENG"] = data.Warning_ENG_Light_Status != 0;
 	}
-	if (ngxData.WARN_annunOVERHEAD != data.WARN_annunOVERHEAD) {
-		ngxData.WARN_annunOVERHEAD = data.WARN_annunOVERHEAD;
-		js["WARN_annunOVERHEAD"] = data.WARN_annunOVERHEAD != 0;
+	if (ngxData.Warning_OVERHEAD_Light_Status != data.Warning_OVERHEAD_Light_Status) {
+		ngxData.Warning_OVERHEAD_Light_Status = data.Warning_OVERHEAD_Light_Status;
+		js["WARN_annunOVERHEAD"] = data.Warning_OVERHEAD_Light_Status != 0;
 	}
-	if (ngxData.WARN_annunAIR_COND != data.WARN_annunAIR_COND) {
-		ngxData.WARN_annunAIR_COND = data.WARN_annunAIR_COND;
-		js["WARN_annunAIR_COND"] = data.WARN_annunAIR_COND != 0;
+	if (ngxData.Warning_AIR_COND_Light_Status != data.Warning_AIR_COND_Light_Status) {
+		ngxData.Warning_AIR_COND_Light_Status = data.Warning_AIR_COND_Light_Status;
+		js["WARN_annunAIR_COND"] = data.Warning_AIR_COND_Light_Status != 0;
 	}
-	if (ngxData.MAIN_annunSPEEDBRAKE_ARMED != data.MAIN_annunSPEEDBRAKE_ARMED) {
-		ngxData.MAIN_annunSPEEDBRAKE_ARMED = data.MAIN_annunSPEEDBRAKE_ARMED;
-		js["MAIN_annunSPEEDBRAKE_ARMED"] = data.MAIN_annunSPEEDBRAKE_ARMED != 0;
+	if (ngxData.SPEED_BRAKE_ARMED_Light_Status != data.SPEED_BRAKE_ARMED_Light_Status) {
+		ngxData.SPEED_BRAKE_ARMED_Light_Status = data.SPEED_BRAKE_ARMED_Light_Status;
+		js["MAIN_annunSPEEDBRAKE_ARMED"] = data.SPEED_BRAKE_ARMED_Light_Status != 0;
 	}
-	if (ngxData.MAIN_annunSPEEDBRAKE_DO_NOT_ARM != data.MAIN_annunSPEEDBRAKE_DO_NOT_ARM) {
-		ngxData.MAIN_annunSPEEDBRAKE_DO_NOT_ARM = data.MAIN_annunSPEEDBRAKE_DO_NOT_ARM;
-		js["MAIN_annunSPEEDBRAKE_DO_NOT_ARM"] = data.MAIN_annunSPEEDBRAKE_DO_NOT_ARM != 0;
+	if (ngxData.SPEED_BRAKE_DO_NOT_ARM_Light_Status != data.SPEED_BRAKE_DO_NOT_ARM_Light_Status) {
+		ngxData.SPEED_BRAKE_DO_NOT_ARM_Light_Status = data.SPEED_BRAKE_DO_NOT_ARM_Light_Status;
+		js["MAIN_annunSPEEDBRAKE_DO_NOT_ARM"] = data.SPEED_BRAKE_DO_NOT_ARM_Light_Status != 0;
 	}
-	if (ngxData.MAIN_annunSPEEDBRAKE_EXTENDED != data.MAIN_annunSPEEDBRAKE_EXTENDED) {
-		ngxData.MAIN_annunSPEEDBRAKE_EXTENDED = data.MAIN_annunSPEEDBRAKE_EXTENDED;
-		js["MAIN_annunSPEEDBRAKE_EXTENDED"] = data.MAIN_annunSPEEDBRAKE_EXTENDED != 0;
+	if (ngxData.SPEEDBRAKES_EXTENDED_Light_Status != data.SPEEDBRAKES_EXTENDED_Light_Status) {
+		ngxData.SPEEDBRAKES_EXTENDED_Light_Status = data.SPEEDBRAKES_EXTENDED_Light_Status;
+		js["MAIN_annunSPEEDBRAKE_EXTENDED"] = data.SPEEDBRAKES_EXTENDED_Light_Status != 0;
 	}
-	if (ngxData.MAIN_annunSTAB_OUT_OF_TRIM != data.MAIN_annunSTAB_OUT_OF_TRIM) {
-		ngxData.MAIN_annunSTAB_OUT_OF_TRIM = data.MAIN_annunSTAB_OUT_OF_TRIM;
-		js["MAIN_annunSTAB_OUT_OF_TRIM"] = data.MAIN_annunSTAB_OUT_OF_TRIM != 0;
+	//if (ngxData.MAIN_annunSTAB_OUT_OF_TRIM != data.MAIN_annunSTAB_OUT_OF_TRIM) {
+	//	ngxData.MAIN_annunSTAB_OUT_OF_TRIM = data.MAIN_annunSTAB_OUT_OF_TRIM;
+	//	js["MAIN_annunSTAB_OUT_OF_TRIM"] = data.MAIN_annunSTAB_OUT_OF_TRIM != 0;
+	//}
+	if (ngxData.ANTISKID_INOP_Light_Status != data.ANTISKID_INOP_Light_Status) {
+		ngxData.ANTISKID_INOP_Light_Status = data.ANTISKID_INOP_Light_Status;
+		js["MAIN_annunANTI_SKID_INOP"] = data.ANTISKID_INOP_Light_Status != 0;
 	}
-	if (ngxData.MAIN_annunANTI_SKID_INOP != data.MAIN_annunANTI_SKID_INOP) {
-		ngxData.MAIN_annunANTI_SKID_INOP = data.MAIN_annunANTI_SKID_INOP;
-		js["MAIN_annunANTI_SKID_INOP"] = data.MAIN_annunANTI_SKID_INOP != 0;
-	}
-	if (ngxData.MAIN_annunAUTO_BRAKE_DISARM != data.MAIN_annunAUTO_BRAKE_DISARM) {
-		ngxData.MAIN_annunAUTO_BRAKE_DISARM = data.MAIN_annunAUTO_BRAKE_DISARM;
-		js["MAIN_annunAUTO_BRAKE_DISARM"] = data.MAIN_annunAUTO_BRAKE_DISARM != 0;
+	if (ngxData.AUTO_BRAKE_DISARM_Light_Status != data.AUTO_BRAKE_DISARM_Light_Status) {
+		ngxData.AUTO_BRAKE_DISARM_Light_Status = data.AUTO_BRAKE_DISARM_Light_Status;
+		js["MAIN_annunAUTO_BRAKE_DISARM"] = data.AUTO_BRAKE_DISARM_Light_Status != 0;
 	}
 	//if (ngxData.MAIN_annunLE_FLAPS_TRANSIT != data.MAIN_annunLE_FLAPS_TRANSIT) {
 	//	ngxData.MAIN_annunLE_FLAPS_TRANSIT = data.MAIN_annunLE_FLAPS_TRANSIT;
@@ -1611,9 +1611,9 @@ std::string Ifly737::buildJsonIfly737()
 	//	ngxData.GPWS_annunINOP = data.GPWS_annunINOP;
 	//	js["GPWS_annunINOP"] = data.GPWS_annunINOP != 0;
 	//}
-	if (ngxData.PED_annunParkingBrake != data.PED_annunParkingBrake) {
-		ngxData.PED_annunParkingBrake = data.PED_annunParkingBrake;
-		js["PED_annunParkingBrake"] = data.PED_annunParkingBrake != 0;
+	if (ngxData.Parking_Brake_Light_Status != data.Parking_Brake_Light_Status) {
+		ngxData.Parking_Brake_Light_Status = data.Parking_Brake_Light_Status;
+		js["PED_annunParkingBrake"] = data.Parking_Brake_Light_Status != 0;
 	}
 	//if (ngxData.FIRE_annunWHEEL_WELL != data.FIRE_annunWHEEL_WELL) {
 	//	ngxData.FIRE_annunWHEEL_WELL = data.FIRE_annunWHEEL_WELL;
@@ -1723,21 +1723,21 @@ std::string Ifly737::buildJsonIfly737()
 	//	ngxData.DOOR_annunAFT_SERVICE = data.DOOR_annunAFT_SERVICE;
 	//	js["DOOR_annunAFT_SERVICE"] = data.DOOR_annunAFT_SERVICE != 0;
 	//}
-	if (ngxData.AIR_annunAUTO_FAIL != data.AIR_annunAUTO_FAIL) {
-		ngxData.AIR_annunAUTO_FAIL = data.AIR_annunAUTO_FAIL;
-		js["AIR_annunAUTO_FAIL"] = data.AIR_annunAUTO_FAIL != 0;
+	if (ngxData.AUTO_FAIL_Light_Status != data.AUTO_FAIL_Light_Status) {
+		ngxData.AUTO_FAIL_Light_Status = data.AUTO_FAIL_Light_Status;
+		js["AIR_annunAUTO_FAIL"] = data.AUTO_FAIL_Light_Status != 0;
 	}
-	if (ngxData.AIR_annunOFFSCHED_DESCENT != data.AIR_annunOFFSCHED_DESCENT) {
-		ngxData.AIR_annunOFFSCHED_DESCENT = data.AIR_annunOFFSCHED_DESCENT;
-		js["AIR_annunOFFSCHED_DESCENT"] = data.AIR_annunOFFSCHED_DESCENT != 0;
+	if (ngxData.OFF_SCHED_DESCENT_Light_Status != data.OFF_SCHED_DESCENT_Light_Status) {
+		ngxData.OFF_SCHED_DESCENT_Light_Status = data.OFF_SCHED_DESCENT_Light_Status;
+		js["AIR_annunOFFSCHED_DESCENT"] = data.OFF_SCHED_DESCENT_Light_Status != 0;
 	}
-	if (ngxData.AIR_annunALTN != data.AIR_annunALTN) {
-		ngxData.AIR_annunALTN = data.AIR_annunALTN;
-		js["AIR_annunALTN"] = data.AIR_annunALTN != 0;
+	if (ngxData.ALTN_Light_Status != data.ALTN_Light_Status) {
+		ngxData.ALTN_Light_Status = data.ALTN_Light_Status;
+		js["AIR_annunALTN"] = data.ALTN_Light_Status != 0;
 	}
-	if (ngxData.AIR_annunMANUAL != data.AIR_annunMANUAL) {
-		ngxData.AIR_annunMANUAL = data.AIR_annunMANUAL;
-		js["AIR_annunMANUAL"] = data.AIR_annunMANUAL != 0;
+	if (ngxData.MANUAL_Light_Status != data.MANUAL_Light_Status) {
+		ngxData.MANUAL_Light_Status = data.MANUAL_Light_Status;
+		js["AIR_annunMANUAL"] = data.MANUAL_Light_Status != 0;
 	}
 
 
@@ -1774,21 +1774,21 @@ std::string Ifly737::buildJsonIfly737()
 	//	ngxData.IRS_annunDC_FAIL[1] = data.IRS_annunDC_FAIL[1];
 	//	js["IRS_annunDC_FAIL_2"] = data.IRS_annunDC_FAIL[1] != 0;
 	//}
-	if (ngxData.ENG_annunREVERSER[0] != data.ENG_annunREVERSER[0]) {
-		ngxData.ENG_annunREVERSER[0] = data.ENG_annunREVERSER[0];
-		js["ENG_annunREVERSER_1"] = data.ENG_annunREVERSER[0] != 0;
+	if (ngxData.REVERSER_1_Light_Status != data.REVERSER_1_Light_Status) {
+		ngxData.REVERSER_1_Light_Status = data.REVERSER_1_Light_Status;
+		js["ENG_annunREVERSER_1"] = data.REVERSER_1_Light_Status != 0;
 	}
-	if (ngxData.ENG_annunREVERSER[1] != data.ENG_annunREVERSER[1]) {
-		ngxData.ENG_annunREVERSER[1] = data.ENG_annunREVERSER[1];
-		js["ENG_annunREVERSER_2"] = data.ENG_annunREVERSER[1] != 0;
+	if (ngxData.REVERSER_2_Light_Status != data.REVERSER_2_Light_Status) {
+		ngxData.REVERSER_2_Light_Status = data.REVERSER_2_Light_Status;
+		js["ENG_annunREVERSER_2"] = data.REVERSER_2_Light_Status != 0;
 	}
-	if (ngxData.ENG_annunENGINE_CONTROL[0] != data.ENG_annunENGINE_CONTROL[0]) {
-		ngxData.ENG_annunENGINE_CONTROL[0] = data.ENG_annunENGINE_CONTROL[0];
-		js["ENG_annunENGINE_CONTROL_1"] = data.ENG_annunENGINE_CONTROL[0] != 0;
+	if (ngxData.ENGINE_CONTROL_1_Light_Status != data.ENGINE_CONTROL_1_Light_Status) {
+		ngxData.ENGINE_CONTROL_1_Light_Status = data.ENGINE_CONTROL_1_Light_Status;
+		js["ENG_annunENGINE_CONTROL_1"] = data.ENGINE_CONTROL_1_Light_Status != 0;
 	}
-	if (ngxData.ENG_annunENGINE_CONTROL[1] != data.ENG_annunENGINE_CONTROL[1]) {
-		ngxData.ENG_annunENGINE_CONTROL[1] = data.ENG_annunENGINE_CONTROL[1];
-		js["ENG_annunENGINE_CONTROL_2"] = data.ENG_annunENGINE_CONTROL[1] != 0;
+	if (ngxData.ENGINE_CONTROL_2_Light_Status != data.ENGINE_CONTROL_2_Light_Status) {
+		ngxData.ENGINE_CONTROL_2_Light_Status = data.ENGINE_CONTROL_2_Light_Status;
+		js["ENG_annunENGINE_CONTROL_2"] = data.ENGINE_CONTROL_2_Light_Status != 0;
 	}
 	//if (ngxData.ENG_annunALTN[0] != data.ENG_annunALTN[0]) {
 	//	ngxData.ENG_annunALTN[0] = data.ENG_annunALTN[0];
@@ -1798,226 +1798,211 @@ std::string Ifly737::buildJsonIfly737()
 	//	ngxData.ENG_annunALTN[1] = data.ENG_annunALTN[1];
 	//	js["ENG_annunALTN_2"] = data.ENG_annunALTN[1] != 0;
 	//}
-	if (ngxData.FCTL_annunFC_LOW_PRESSURE[0] != data.FCTL_annunFC_LOW_PRESSURE[0]) {
-		ngxData.FCTL_annunFC_LOW_PRESSURE[0] = data.FCTL_annunFC_LOW_PRESSURE[0];
-		js["FCTL_annunFC_LOW_PRESSURE_1"] = data.FCTL_annunFC_LOW_PRESSURE[0] != 0;
+	if (ngxData.LOW_PRESSURE_A_Light_Status != data.LOW_PRESSURE_A_Light_Status) {
+		ngxData.LOW_PRESSURE_A_Light_Status = data.LOW_PRESSURE_A_Light_Status;
+		js["FCTL_annunFC_LOW_PRESSURE_1"] = data.LOW_PRESSURE_A_Light_Status != 0;
 	}
-	if (ngxData.FCTL_annunFC_LOW_PRESSURE[1] != data.FCTL_annunFC_LOW_PRESSURE[1]) {
-		ngxData.FCTL_annunFC_LOW_PRESSURE[1] = data.FCTL_annunFC_LOW_PRESSURE[1];
-		js["FCTL_annunFC_LOW_PRESSURE_2"] = data.FCTL_annunFC_LOW_PRESSURE[1] != 0;
+	if (ngxData.LOW_PRESSURE_B_Light_Status != data.LOW_PRESSURE_B_Light_Status) {
+		ngxData.LOW_PRESSURE_B_Light_Status = data.LOW_PRESSURE_B_Light_Status;
+		js["FCTL_annunFC_LOW_PRESSURE_2"] = data.LOW_PRESSURE_B_Light_Status != 0;
 	}
-	if (ngxData.FUEL_annunENG_VALVE_CLOSED[0] != data.FUEL_annunENG_VALVE_CLOSED[0]) {
-		ngxData.FUEL_annunENG_VALVE_CLOSED[0] = data.FUEL_annunENG_VALVE_CLOSED[0];
-#ifdef PMDG_737_NG3 
-		js["FUEL_annunENG_VALVE_CLOSED_1"] = data.FUEL_annunENG_VALVE_CLOSED[0] != 0 != 0;
-#else
-		js["FUEL_annunENG_VALVE_CLOSED_1"] = data.FUEL_annunENG_VALVE_CLOSED[0] != 0;
+	if (ngxData.ENG_VALVE_CLOSED_Light_1_Status != data.ENG_VALVE_CLOSED_Light_1_Status) {
+		ngxData.ENG_VALVE_CLOSED_Light_1_Status = data.ENG_VALVE_CLOSED_Light_1_Status;
+		js["FUEL_annunENG_VALVE_CLOSED_1"] = data.ENG_VALVE_CLOSED_Light_1_Status != 0 != 0;
+	}
+	if (ngxData.ENG_VALVE_CLOSED_Light_2_Status != data.ENG_VALVE_CLOSED_Light_2_Status) {
+		ngxData.ENG_VALVE_CLOSED_Light_2_Status = data.ENG_VALVE_CLOSED_Light_2_Status;
+		js["FUEL_annunENG_VALVE_CLOSED_2"] = data.ENG_VALVE_CLOSED_Light_2_Status != 0 != 0;
 
-#endif
 	}
-	if (ngxData.FUEL_annunENG_VALVE_CLOSED[1] != data.FUEL_annunENG_VALVE_CLOSED[1]) {
-		ngxData.FUEL_annunENG_VALVE_CLOSED[1] = data.FUEL_annunENG_VALVE_CLOSED[1];
-#ifdef PMDG_737_NG3 
-		js["FUEL_annunENG_VALVE_CLOSED_2"] = data.FUEL_annunENG_VALVE_CLOSED[1] != 0 != 0;
-#else
-		js["FUEL_annunENG_VALVE_CLOSED_2"] = data.FUEL_annunENG_VALVE_CLOSED[1] != 0;
-#endif
+	if (ngxData.SPAR_VALVE_CLOSED_Light_1_Status != data.SPAR_VALVE_CLOSED_Light_1_Status) {
+		ngxData.SPAR_VALVE_CLOSED_Light_1_Status = data.SPAR_VALVE_CLOSED_Light_1_Status;
+		js["FUEL_annunSPAR_VALVE_CLOSED_1"] = data.SPAR_VALVE_CLOSED_Light_1_Status != 0 != 0;
+
 	}
-	if (ngxData.FUEL_annunSPAR_VALVE_CLOSED[0] != data.FUEL_annunSPAR_VALVE_CLOSED[0]) {
-		ngxData.FUEL_annunSPAR_VALVE_CLOSED[0] = data.FUEL_annunSPAR_VALVE_CLOSED[0];
-#ifdef PMDG_737_NG3 
-		js["FUEL_annunSPAR_VALVE_CLOSED_1"] = data.FUEL_annunSPAR_VALVE_CLOSED[0] != 0 != 0;
-#else
-		js["FUEL_annunSPAR_VALVE_CLOSED_1"] = data.FUEL_annunSPAR_VALVE_CLOSED[0] != 0;
-#endif
+	if (ngxData.SPAR_VALVE_CLOSED_Light_2_Status != data.SPAR_VALVE_CLOSED_Light_2_Status) {
+		ngxData.SPAR_VALVE_CLOSED_Light_2_Status = data.SPAR_VALVE_CLOSED_Light_2_Status; 
+		js["FUEL_annunSPAR_VALVE_CLOSED_2"] = data.SPAR_VALVE_CLOSED_Light_2_Status != 0 != 0;
+
+	if (ngxData.FILTER_BYPASS_Light_1_Status != data.FILTER_BYPASS_Light_1_Status) {
+		ngxData.FILTER_BYPASS_Light_1_Status = data.FILTER_BYPASS_Light_1_Status;
+		js["FUEL_annunFILTER_BYPASS_1"] = data.FILTER_BYPASS_Light_1_Status != 0;
 	}
-	if (ngxData.FUEL_annunSPAR_VALVE_CLOSED[1] != data.FUEL_annunSPAR_VALVE_CLOSED[1]) {
-		ngxData.FUEL_annunSPAR_VALVE_CLOSED[1] = data.FUEL_annunSPAR_VALVE_CLOSED[1];
-#ifdef PMDG_737_NG3 
-		js["FUEL_annunSPAR_VALVE_CLOSED_2"] = data.FUEL_annunSPAR_VALVE_CLOSED[1] != 0 != 0;
-#else
-		js["FUEL_annunSPAR_VALVE_CLOSED_2"] = data.FUEL_annunSPAR_VALVE_CLOSED[1] != 0;
-#endif
+	if (ngxData.FILTER_BYPASS_Light_2_Status != data.FILTER_BYPASS_Light_2_Status) {
+		ngxData.FILTER_BYPASS_Light_2_Status = data.FILTER_BYPASS_Light_2_Status;
+		js["FUEL_annunFILTER_BYPASS_2"] = data.FILTER_BYPASS_Light_2_Status != 0;
 	}
-	if (ngxData.FUEL_annunFILTER_BYPASS[0] != data.FUEL_annunFILTER_BYPASS[0]) {
-		ngxData.FUEL_annunFILTER_BYPASS[0] = data.FUEL_annunFILTER_BYPASS[0];
-		js["FUEL_annunFILTER_BYPASS_1"] = data.FUEL_annunFILTER_BYPASS[0] != 0;
+	if (ngxData.LOW_PRESSURE_Light_L_FWD_Status != data.LOW_PRESSURE_Light_L_FWD_Status) {
+		ngxData.LOW_PRESSURE_Light_L_FWD_Status = data.LOW_PRESSURE_Light_L_FWD_Status;
+		js["FUEL_annunLOWPRESS_Fwd_1"] = data.LOW_PRESSURE_Light_L_FWD_Status != 0;
 	}
-	if (ngxData.FUEL_annunFILTER_BYPASS[1] != data.FUEL_annunFILTER_BYPASS[1]) {
-		ngxData.FUEL_annunFILTER_BYPASS[1] = data.FUEL_annunFILTER_BYPASS[1];
-		js["FUEL_annunFILTER_BYPASS_2"] = data.FUEL_annunFILTER_BYPASS[1] != 0;
+	if (ngxData.LOW_PRESSURE_Light_R_FWD_Status != data.LOW_PRESSURE_Light_R_FWD_Status) {
+		ngxData.LOW_PRESSURE_Light_R_FWD_Status = data.LOW_PRESSURE_Light_R_FWD_Status;
+		js["FUEL_annunLOWPRESS_Fwd_2"] = data.LOW_PRESSURE_Light_R_FWD_Status != 0;
 	}
-	if (ngxData.FUEL_annunLOWPRESS_Fwd[0] != data.FUEL_annunLOWPRESS_Fwd[0]) {
-		ngxData.FUEL_annunLOWPRESS_Fwd[0] = data.FUEL_annunLOWPRESS_Fwd[0];
-		js["FUEL_annunLOWPRESS_Fwd_1"] = data.FUEL_annunLOWPRESS_Fwd[0] != 0;
+	if (ngxData.LOW_PRESSURE_Light_L_AFT_Status != data.LOW_PRESSURE_Light_L_AFT_Status) {
+		ngxData.LOW_PRESSURE_Light_L_AFT_Status = data.LOW_PRESSURE_Light_L_AFT_Status;
+		js["FUEL_annunLOWPRESS_Aft_1"] = data.LOW_PRESSURE_Light_L_AFT_Status != 0;
 	}
-	if (ngxData.FUEL_annunLOWPRESS_Fwd[1] != data.FUEL_annunLOWPRESS_Fwd[1]) {
-		ngxData.FUEL_annunLOWPRESS_Fwd[1] = data.FUEL_annunLOWPRESS_Fwd[1];
-		js["FUEL_annunLOWPRESS_Fwd_2"] = data.FUEL_annunLOWPRESS_Fwd[1] != 0;
+	if (ngxData.LOW_PRESSURE_Light_R_AFT_Status != data.LOW_PRESSURE_Light_R_AFT_Status) {
+		ngxData.LOW_PRESSURE_Light_R_AFT_Status = data.LOW_PRESSURE_Light_R_AFT_Status;
+		js["FUEL_annunLOWPRESS_Aft_2"] = data.LOW_PRESSURE_Light_R_AFT_Status != 0;
 	}
-	if (ngxData.FUEL_annunLOWPRESS_Aft[0] != data.FUEL_annunLOWPRESS_Aft[0]) {
-		ngxData.FUEL_annunLOWPRESS_Aft[0] = data.FUEL_annunLOWPRESS_Aft[0];
-		js["FUEL_annunLOWPRESS_Aft_1"] = data.FUEL_annunLOWPRESS_Aft[0] != 0;
+	if (ngxData.Fuel_CENTER_L_Switch_Status != data.Fuel_CENTER_L_Switch_Status) {
+		ngxData.Fuel_CENTER_L_Switch_Status = data.Fuel_CENTER_L_Switch_Status;
+		js["FUEL_annunLOWPRESS_Ctr_1"] = data.Fuel_CENTER_L_Switch_Status != 0;
 	}
-	if (ngxData.FUEL_annunLOWPRESS_Aft[1] != data.FUEL_annunLOWPRESS_Aft[1]) {
-		ngxData.FUEL_annunLOWPRESS_Aft[1] = data.FUEL_annunLOWPRESS_Aft[1];
-		js["FUEL_annunLOWPRESS_Aft_2"] = data.FUEL_annunLOWPRESS_Aft[1] != 0;
+	if (ngxData.Fuel_CENTER_R_Switch_Status != data.Fuel_CENTER_R_Switch_Status) {
+		ngxData.Fuel_CENTER_R_Switch_Status = data.Fuel_CENTER_R_Switch_Status;
+		js["FUEL_annunLOWPRESS_Ctr_2"] = data.Fuel_CENTER_R_Switch_Status != 0;
 	}
-	if (ngxData.FUEL_annunLOWPRESS_Ctr[0] != data.FUEL_annunLOWPRESS_Ctr[0]) {
-		ngxData.FUEL_annunLOWPRESS_Ctr[0] = data.FUEL_annunLOWPRESS_Ctr[0];
-		js["FUEL_annunLOWPRESS_Ctr_1"] = data.FUEL_annunLOWPRESS_Ctr[0] != 0;
+	if (ngxData.ENG_1_DRIVE_Light_Status != data.ENG_1_DRIVE_Light_Status) {
+		ngxData.ENG_1_DRIVE_Light_Status = data.ENG_1_DRIVE_Light_Status;
+		js["ELEC_annunDRIVE_1"] = data.ENG_1_DRIVE_Light_Status != 0;
 	}
-	if (ngxData.FUEL_annunLOWPRESS_Ctr[1] != data.FUEL_annunLOWPRESS_Ctr[1]) {
-		ngxData.FUEL_annunLOWPRESS_Ctr[1] = data.FUEL_annunLOWPRESS_Ctr[1];
-		js["FUEL_annunLOWPRESS_Ctr_2"] = data.FUEL_annunLOWPRESS_Ctr[1] != 0;
+	if (ngxData.ENG_2_DRIVE_Light_Status != data.ENG_2_DRIVE_Light_Status) {
+		ngxData.ENG_2_DRIVE_Light_Status = data.ENG_2_DRIVE_Light_Status;
+		js["ELEC_annunDRIVE_2"] = data.ENG_2_DRIVE_Light_Status != 0;
 	}
-	if (ngxData.ELEC_annunDRIVE[0] != data.ELEC_annunDRIVE[0]) {
-		ngxData.ELEC_annunDRIVE[0] = data.ELEC_annunDRIVE[0];
-		js["ELEC_annunDRIVE_1"] = data.ELEC_annunDRIVE[0] != 0;
+	if (ngxData.ENG_1_TRANSFER_BUS_OFF_Light_Status != data.ENG_1_TRANSFER_BUS_OFF_Light_Status) {
+		ngxData.ENG_1_TRANSFER_BUS_OFF_Light_Status = data.ENG_1_TRANSFER_BUS_OFF_Light_Status;
+		js["ELEC_annunTRANSFER_BUS_OFF_1"] = data.ENG_1_TRANSFER_BUS_OFF_Light_Status != 0;
 	}
-	if (ngxData.ELEC_annunDRIVE[1] != data.ELEC_annunDRIVE[1]) {
-		ngxData.ELEC_annunDRIVE[1] = data.ELEC_annunDRIVE[1];
-		js["ELEC_annunDRIVE_2"] = data.ELEC_annunDRIVE[1] != 0;
+	if (ngxData.ENG_2_TRANSFER_BUS_OFF_Light_Status != data.ENG_2_TRANSFER_BUS_OFF_Light_Status) {
+		ngxData.ENG_2_TRANSFER_BUS_OFF_Light_Status = data.ENG_2_TRANSFER_BUS_OFF_Light_Status;
+		js["ELEC_annunTRANSFER_BUS_OFF_2"] = data.ENG_2_TRANSFER_BUS_OFF_Light_Status != 0;
 	}
-	if (ngxData.ELEC_annunTRANSFER_BUS_OFF[0] != data.ELEC_annunTRANSFER_BUS_OFF[0]) {
-		ngxData.ELEC_annunTRANSFER_BUS_OFF[0] = data.ELEC_annunTRANSFER_BUS_OFF[0];
-		js["ELEC_annunTRANSFER_BUS_OFF_1"] = data.ELEC_annunTRANSFER_BUS_OFF[0] != 0;
+	if (ngxData.ENG_1_SOURCE_OFF_Light_Status != data.ENG_1_SOURCE_OFF_Light_Status) {
+		ngxData.ENG_1_SOURCE_OFF_Light_Status = data.ENG_1_SOURCE_OFF_Light_Status;
+		js["ELEC_annunSOURCE_OFF_1"] = data.ENG_1_SOURCE_OFF_Light_Status != 0;
 	}
-	if (ngxData.ELEC_annunTRANSFER_BUS_OFF[1] != data.ELEC_annunTRANSFER_BUS_OFF[1]) {
-		ngxData.ELEC_annunTRANSFER_BUS_OFF[1] = data.ELEC_annunTRANSFER_BUS_OFF[1];
-		js["ELEC_annunTRANSFER_BUS_OFF_2"] = data.ELEC_annunTRANSFER_BUS_OFF[1] != 0;
+	if (ngxData.ENG_2_SOURCE_OFF_Light_Status != data.ENG_2_SOURCE_OFF_Light_Status) {
+		ngxData.ENG_2_SOURCE_OFF_Light_Status = data.ENG_2_SOURCE_OFF_Light_Status;
+		js["ELEC_annunSOURCE_OFF_2"] = data.ENG_2_SOURCE_OFF_Light_Status != 0;
 	}
-	if (ngxData.ELEC_annunSOURCE_OFF[0] != data.ELEC_annunSOURCE_OFF[0]) {
-		ngxData.ELEC_annunSOURCE_OFF[0] = data.ELEC_annunSOURCE_OFF[0];
-		js["ELEC_annunSOURCE_OFF_1"] = data.ELEC_annunSOURCE_OFF[0] != 0;
+	if (ngxData.ENG_1_GEN_OFF_BUS_Light_Status != data.ENG_1_GEN_OFF_BUS_Light_Status) {
+		ngxData.ENG_1_GEN_OFF_BUS_Light_Status = data.ENG_1_GEN_OFF_BUS_Light_Status;
+		js["ELEC_annunGEN_BUS_OFF_1"] = data.ENG_1_GEN_OFF_BUS_Light_Status != 0;
 	}
-	if (ngxData.ELEC_annunSOURCE_OFF[1] != data.ELEC_annunSOURCE_OFF[1]) {
-		ngxData.ELEC_annunSOURCE_OFF[1] = data.ELEC_annunSOURCE_OFF[1];
-		js["ELEC_annunSOURCE_OFF_2"] = data.ELEC_annunSOURCE_OFF[1] != 0;
+	if (ngxData.ENG_2_GEN_OFF_BUS_Light_Status != data.ENG_2_GEN_OFF_BUS_Light_Status) {
+		ngxData.ENG_2_GEN_OFF_BUS_Light_Status = data.ENG_2_GEN_OFF_BUS_Light_Status;
+		js["ELEC_annunGEN_BUS_OFF_2"] = data.ENG_2_GEN_OFF_BUS_Light_Status != 0;
 	}
-	if (ngxData.ELEC_annunGEN_BUS_OFF[0] != data.ELEC_annunGEN_BUS_OFF[0]) {
-		ngxData.ELEC_annunGEN_BUS_OFF[0] = data.ELEC_annunGEN_BUS_OFF[0];
-		js["ELEC_annunGEN_BUS_OFF_1"] = data.ELEC_annunGEN_BUS_OFF[0] != 0;
+	if (ngxData.Window_OVERHEAT_Lights_1_Status != data.Window_OVERHEAT_Lights_1_Status) {
+		ngxData.Window_OVERHEAT_Lights_1_Status = data.Window_OVERHEAT_Lights_1_Status;
+		js["ICE_annunOVERHEAT_1"] = data.Window_OVERHEAT_Lights_1_Status != 0;
 	}
-	if (ngxData.ELEC_annunGEN_BUS_OFF[1] != data.ELEC_annunGEN_BUS_OFF[1]) {
-		ngxData.ELEC_annunGEN_BUS_OFF[1] = data.ELEC_annunGEN_BUS_OFF[1];
-		js["ELEC_annunGEN_BUS_OFF_2"] = data.ELEC_annunGEN_BUS_OFF[1] != 0;
+	if (ngxData.Window_OVERHEAT_Lights_2_Status != data.Window_OVERHEAT_Lights_2_Status) {
+		ngxData.Window_OVERHEAT_Lights_2_Status = data.Window_OVERHEAT_Lights_2_Status;
+		js["ICE_annunOVERHEAT_2"] = data.Window_OVERHEAT_Lights_2_Status != 0;
 	}
-	if (ngxData.ICE_annunOVERHEAT[0] != data.ICE_annunOVERHEAT[0]) {
-		ngxData.ICE_annunOVERHEAT[0] = data.ICE_annunOVERHEAT[0];
-		js["ICE_annunOVERHEAT_1"] = data.ICE_annunOVERHEAT[0] != 0;
+	if (ngxData.Window_OVERHEAT_Lights_3_Status != data.Window_OVERHEAT_Lights_3_Status) {
+		ngxData.Window_OVERHEAT_Lights_3_Status = data.Window_OVERHEAT_Lights_3_Status;
+		js["ICE_annunOVERHEAT_3"] = data.Window_OVERHEAT_Lights_3_Status != 0;
 	}
-	if (ngxData.ICE_annunOVERHEAT[1] != data.ICE_annunOVERHEAT[1]) {
-		ngxData.ICE_annunOVERHEAT[1] = data.ICE_annunOVERHEAT[1];
-		js["ICE_annunOVERHEAT_2"] = data.ICE_annunOVERHEAT[1] != 0;
+	if (ngxData.Window_OVERHEAT_Lights_4_Status != data.Window_OVERHEAT_Lights_4_Status) {
+		ngxData.Window_OVERHEAT_Lights_4_Status = data.Window_OVERHEAT_Lights_4_Status;
+		js["ICE_annunOVERHEAT_4"] = data.Window_OVERHEAT_Lights_4_Status != 0;
 	}
-	if (ngxData.ICE_annunOVERHEAT[2] != data.ICE_annunOVERHEAT[2]) {
-		ngxData.ICE_annunOVERHEAT[2] = data.ICE_annunOVERHEAT[2];
-		js["ICE_annunOVERHEAT_3"] = data.ICE_annunOVERHEAT[2] != 0;
+	if (ngxData.Window_Heat_ON_Lights_1_Status != data.Window_Heat_ON_Lights_1_Status) {
+		ngxData.Window_Heat_ON_Lights_1_Status = data.Window_Heat_ON_Lights_1_Status;
+		js["ICE_annunON_1"] = data.Window_Heat_ON_Lights_1_Status != 0;
 	}
-	if (ngxData.ICE_annunOVERHEAT[3] != data.ICE_annunOVERHEAT[3]) {
-		ngxData.ICE_annunOVERHEAT[3] = data.ICE_annunOVERHEAT[3];
-		js["ICE_annunOVERHEAT_4"] = data.ICE_annunOVERHEAT[3] != 0;
+	if (ngxData.Window_Heat_ON_Lights_2_Status != data.Window_Heat_ON_Lights_2_Status) {
+		ngxData.Window_Heat_ON_Lights_2_Status = data.Window_Heat_ON_Lights_2_Status;
+		js["ICE_annunON_2"] = data.Window_Heat_ON_Lights_2_Status != 0;
 	}
-	if (ngxData.ICE_annunON[0] != data.ICE_annunON[0]) {
-		ngxData.ICE_annunON[0] = data.ICE_annunON[0];
-		js["ICE_annunON_1"] = data.ICE_annunON[0] != 0;
+	if (ngxData.Window_Heat_ON_Lights_3_Status != data.Window_Heat_ON_Lights_3_Status) {
+		ngxData.Window_Heat_ON_Lights_3_Status = data.Window_Heat_ON_Lights_3_Status;
+		js["ICE_annunON_3"] = data.Window_Heat_ON_Lights_3_Status != 0;
 	}
-	if (ngxData.ICE_annunON[1] != data.ICE_annunON[1]) {
-		ngxData.ICE_annunON[1] = data.ICE_annunON[1];
-		js["ICE_annunON_2"] = data.ICE_annunON[1] != 0;
+	if (ngxData.Window_Heat_ON_Lights_4_Status != data.Window_Heat_ON_Lights_4_Status) {
+		ngxData.Window_Heat_ON_Lights_4_Status = data.Window_Heat_ON_Lights_4_Status;
+		js["ICE_annunON_4"] = data.Window_Heat_ON_Lights_4_Status != 0;
 	}
-	if (ngxData.ICE_annunON[2] != data.ICE_annunON[2]) {
-		ngxData.ICE_annunON[2] = data.ICE_annunON[2];
-		js["ICE_annunON_3"] = data.ICE_annunON[2] != 0;
+	if (ngxData.L_VALVE_OPEN_Lights_Status != data.L_VALVE_OPEN_Lights_Status) {
+		ngxData.L_VALVE_OPEN_Lights_Status = data.L_VALVE_OPEN_Lights_Status;
+		js["ICE_annunVALVE_OPEN_1"] = data.L_VALVE_OPEN_Lights_Status != 0;
 	}
-	if (ngxData.ICE_annunON[3] != data.ICE_annunON[3]) {
-		ngxData.ICE_annunON[3] = data.ICE_annunON[3];
-		js["ICE_annunON_4"] = data.ICE_annunON[3] != 0;
+	if (ngxData.R_VALVE_OPEN_Lights_Status != data.R_VALVE_OPEN_Lights_Status) {
+		ngxData.R_VALVE_OPEN_Lights_Status = data.R_VALVE_OPEN_Lights_Status;
+		js["ICE_annunVALVE_OPEN_2"] = data.R_VALVE_OPEN_Lights_Status != 0;
 	}
-	if (ngxData.ICE_annunVALVE_OPEN[0] != data.ICE_annunVALVE_OPEN[0]) {
-		ngxData.ICE_annunVALVE_OPEN[0] = data.ICE_annunVALVE_OPEN[0];
-		js["ICE_annunVALVE_OPEN_1"] = data.ICE_annunVALVE_OPEN[0] != 0;
+	if (ngxData.COWL_ANTI_ICE_Lights_1_Status != data.COWL_ANTI_ICE_Lights_1_Status) {
+		ngxData.COWL_ANTI_ICE_Lights_1_Status = data.COWL_ANTI_ICE_Lights_1_Status;
+		js["ICE_annunCOWL_ANTI_ICE_1"] = data.COWL_ANTI_ICE_Lights_1_Status != 0;
 	}
-	if (ngxData.ICE_annunVALVE_OPEN[1] != data.ICE_annunVALVE_OPEN[1]) {
-		ngxData.ICE_annunVALVE_OPEN[1] = data.ICE_annunVALVE_OPEN[1];
-		js["ICE_annunVALVE_OPEN_2"] = data.ICE_annunVALVE_OPEN[1] != 0;
+	if (ngxData.COWL_ANTI_ICE_Lights_2_Status != data.COWL_ANTI_ICE_Lights_2_Status) {
+		ngxData.COWL_ANTI_ICE_Lights_2_Status = data.COWL_ANTI_ICE_Lights_2_Status;
+		js["ICE_annunCOWL_ANTI_ICE_2"] = data.COWL_ANTI_ICE_Lights_2_Status != 0;
 	}
-	if (ngxData.ICE_annunCOWL_ANTI_ICE[0] != data.ICE_annunCOWL_ANTI_ICE[0]) {
-		ngxData.ICE_annunCOWL_ANTI_ICE[0] = data.ICE_annunCOWL_ANTI_ICE[0];
-		js["ICE_annunCOWL_ANTI_ICE_1"] = data.ICE_annunCOWL_ANTI_ICE[0] != 0;
+	if (ngxData.COWL_VALVE_OPEN_Lights_1_Status != data.COWL_VALVE_OPEN_Lights_1_Status) {
+		ngxData.COWL_VALVE_OPEN_Lights_1_Status = data.COWL_VALVE_OPEN_Lights_1_Status;
+		js["ICE_annunCOWL_VALVE_OPEN_1"] = data.COWL_VALVE_OPEN_Lights_1_Status != 0;
 	}
-	if (ngxData.ICE_annunCOWL_ANTI_ICE[1] != data.ICE_annunCOWL_ANTI_ICE[1]) {
-		ngxData.ICE_annunCOWL_ANTI_ICE[1] = data.ICE_annunCOWL_ANTI_ICE[1];
-		js["ICE_annunCOWL_ANTI_ICE_2"] = data.ICE_annunCOWL_ANTI_ICE[1] != 0;
+	if (ngxData.COWL_VALVE_OPEN_Lights_2_Status != data.COWL_VALVE_OPEN_Lights_2_Status) {
+		ngxData.COWL_VALVE_OPEN_Lights_2_Status = data.COWL_VALVE_OPEN_Lights_2_Status;
+		js["ICE_annunCOWL_VALVE_OPEN_2"] = data.COWL_VALVE_OPEN_Lights_2_Status != 0;
 	}
-	if (ngxData.ICE_annunCOWL_VALVE_OPEN[0] != data.ICE_annunCOWL_VALVE_OPEN[0]) {
-		ngxData.ICE_annunCOWL_VALVE_OPEN[0] = data.ICE_annunCOWL_VALVE_OPEN[0];
-		js["ICE_annunCOWL_VALVE_OPEN_1"] = data.ICE_annunCOWL_VALVE_OPEN[0] != 0;
+	if (ngxData.ENG_1_HYD_LOW_PRESSURE_Light_Status!= data.HYD_annunLOW_PRESS_eng[0]) {
+		ngxData.ENG_1_HYD_LOW_PRESSURE_Light_Status= data.HYD_annunLOW_PRESS_eng[0];
+		js["HYD_annunLOW_PRESS_eng_1"] = data.ENG_1_HYD_LOW_PRESSURE_Light_Status!= 0;
 	}
-	if (ngxData.ICE_annunCOWL_VALVE_OPEN[1] != data.ICE_annunCOWL_VALVE_OPEN[1]) {
-		ngxData.ICE_annunCOWL_VALVE_OPEN[1] = data.ICE_annunCOWL_VALVE_OPEN[1];
-		js["ICE_annunCOWL_VALVE_OPEN_2"] = data.ICE_annunCOWL_VALVE_OPEN[1] != 0;
+	if (ngxData.ENG_2_HYD_LOW_PRESSURE_Light_Status!= data.HYD_annunLOW_PRESS_eng[1]) {
+		ngxData.ENG_2_HYD_LOW_PRESSURE_Light_Status= data.HYD_annunLOW_PRESS_eng[1];
+		js["HYD_annunLOW_PRESS_eng_2"] = data.ENG_2_HYD_LOW_PRESSURE_Light_Status!= 0;
 	}
-	if (ngxData.HYD_annunLOW_PRESS_eng[0] != data.HYD_annunLOW_PRESS_eng[0]) {
-		ngxData.HYD_annunLOW_PRESS_eng[0] = data.HYD_annunLOW_PRESS_eng[0];
-		js["HYD_annunLOW_PRESS_eng_1"] = data.HYD_annunLOW_PRESS_eng[0] != 0;
+	if (ngxData.ELEC_1_HYD_LOW_PRESSURE_Light_Status != data.ELEC_1_HYD_LOW_PRESSURE_Light_Status) {
+		ngxData.ELEC_1_HYD_LOW_PRESSURE_Light_Status = data.ELEC_1_HYD_LOW_PRESSURE_Light_Status;
+		js["HYD_annunLOW_PRESS_elec_1"] = data.ELEC_1_HYD_LOW_PRESSURE_Light_Status != 0;
 	}
-	if (ngxData.HYD_annunLOW_PRESS_eng[1] != data.HYD_annunLOW_PRESS_eng[1]) {
-		ngxData.HYD_annunLOW_PRESS_eng[1] = data.HYD_annunLOW_PRESS_eng[1];
-		js["HYD_annunLOW_PRESS_eng_2"] = data.HYD_annunLOW_PRESS_eng[1] != 0;
+	if (ngxData.ELEC_2_HYD_LOW_PRESSURE_Light_Status != data.ELEC_2_HYD_LOW_PRESSURE_Light_Status) {
+		ngxData.ELEC_2_HYD_LOW_PRESSURE_Light_Status = data.ELEC_2_HYD_LOW_PRESSURE_Light_Status;
+		js["HYD_annunLOW_PRESS_elec_2"] = data.ELEC_2_HYD_LOW_PRESSURE_Light_Status != 0;
 	}
-	if (ngxData.HYD_annunLOW_PRESS_elec[0] != data.HYD_annunLOW_PRESS_elec[0]) {
-		ngxData.HYD_annunLOW_PRESS_elec[0] = data.HYD_annunLOW_PRESS_elec[0];
-		js["HYD_annunLOW_PRESS_elec_1"] = data.HYD_annunLOW_PRESS_elec[0] != 0;
+	if (ngxData.ELEC_1_HYD_OVERHEAT_Light_Status != data.ELEC_1_HYD_OVERHEAT_Light_Status) {
+		ngxData.ELEC_1_HYD_OVERHEAT_Light_Status = data.ELEC_1_HYD_OVERHEAT_Light_Status;
+		js["HYD_annunOVERHEAT_elec_1"] = data.ELEC_1_HYD_OVERHEAT_Light_Status != 0;
 	}
-	if (ngxData.HYD_annunLOW_PRESS_elec[1] != data.HYD_annunLOW_PRESS_elec[1]) {
-		ngxData.HYD_annunLOW_PRESS_elec[1] = data.HYD_annunLOW_PRESS_elec[1];
-		js["HYD_annunLOW_PRESS_elec_2"] = data.HYD_annunLOW_PRESS_elec[1] != 0;
+	if (ngxData.ELEC_2_HYD_OVERHEAT_Light_Status != data.ELEC_2_HYD_OVERHEAT_Light_Status) {
+		ngxData.ELEC_2_HYD_OVERHEAT_Light_Status = data.ELEC_2_HYD_OVERHEAT_Light_Status;
+		js["HYD_annunOVERHEAT_elec_2"] = data.ELEC_2_HYD_OVERHEAT_Light_Status != 0;
 	}
-	if (ngxData.HYD_annunOVERHEAT_elec[0] != data.HYD_annunOVERHEAT_elec[0]) {
-		ngxData.HYD_annunOVERHEAT_elec[0] = data.HYD_annunOVERHEAT_elec[0];
-		js["HYD_annunOVERHEAT_elec_1"] = data.HYD_annunOVERHEAT_elec[0] != 0;
+	if (ngxData.ZONE_TEMP_Light_1_Status != data.ZONE_TEMP_Light_1_Status) {
+		ngxData.ZONE_TEMP_Light_1_Status = data.ZONE_TEMP_Light_1_Status;
+		js["AIR_annunZoneTemp_1"] = data.ZONE_TEMP_Light_1_Status != 0;
 	}
-	if (ngxData.HYD_annunOVERHEAT_elec[1] != data.HYD_annunOVERHEAT_elec[1]) {
-		ngxData.HYD_annunOVERHEAT_elec[1] = data.HYD_annunOVERHEAT_elec[1];
-		js["HYD_annunOVERHEAT_elec_2"] = data.HYD_annunOVERHEAT_elec[1] != 0;
+	if (ngxData.ZONE_TEMP_Light_2_Status != data.ZONE_TEMP_Light_2_Status) {
+		ngxData.ZONE_TEMP_Light_2_Status = data.ZONE_TEMP_Light_2_Status;
+		js["AIR_annunZoneTemp_2"] = data.ZONE_TEMP_Light_2_Status != 0;
 	}
-	if (ngxData.AIR_annunZoneTemp[0] != data.AIR_annunZoneTemp[0]) {
-		ngxData.AIR_annunZoneTemp[0] = data.AIR_annunZoneTemp[0];
-		js["AIR_annunZoneTemp_1"] = data.AIR_annunZoneTemp[0] != 0;
+	if (ngxData.ZONE_TEMP_Light_3_Status != data.ZONE_TEMP_Light_3_Status) {
+		ngxData.ZONE_TEMP_Light_3_Status = data.ZONE_TEMP_Light_3_Status;
+		js["AIR_annunZoneTemp_3"] = data.ZONE_TEMP_Light_3_Status != 0;
 	}
-	if (ngxData.AIR_annunZoneTemp[1] != data.AIR_annunZoneTemp[1]) {
-		ngxData.AIR_annunZoneTemp[1] = data.AIR_annunZoneTemp[1];
-		js["AIR_annunZoneTemp_2"] = data.AIR_annunZoneTemp[1] != 0;
+	if (ngxData.PACK_TRIP_OFF_1_Light_Status != data.PACK_TRIP_OFF_1_Light_Status) {
+		ngxData.PACK_TRIP_OFF_1_Light_Status = data.PACK_TRIP_OFF_1_Light_Status;
+		js["AIR_annunPackTripOff_1"] = data.PACK_TRIP_OFF_1_Light_Status != 0;
 	}
-	if (ngxData.AIR_annunZoneTemp[2] != data.AIR_annunZoneTemp[2]) {
-		ngxData.AIR_annunZoneTemp[2] = data.AIR_annunZoneTemp[2];
-		js["AIR_annunZoneTemp_3"] = data.AIR_annunZoneTemp[2] != 0;
+	if (ngxData.PACK_TRIP_OFF_2_Light_Status != data.PACK_TRIP_OFF_2_Light_Status) {
+		ngxData.PACK_TRIP_OFF_2_Light_Status = data.PACK_TRIP_OFF_2_Light_Status;
+		js["AIR_annunPackTripOff_2"] = data.PACK_TRIP_OFF_2_Light_Status != 0;
 	}
-	if (ngxData.AIR_annunPackTripOff[0] != data.AIR_annunPackTripOff[0]) {
-		ngxData.AIR_annunPackTripOff[0] = data.AIR_annunPackTripOff[0];
-		js["AIR_annunPackTripOff_1"] = data.AIR_annunPackTripOff[0] != 0;
+	if (ngxData.WING_BODY_OVERHEAT_1_Light_Status != data.WING_BODY_OVERHEAT_1_Light_Status) {
+		ngxData.WING_BODY_OVERHEAT_1_Light_Status = data.WING_BODY_OVERHEAT_1_Light_Status;
+		js["AIR_annunWingBodyOverheat_1"] = data.WING_BODY_OVERHEAT_1_Light_Status != 0;
 	}
-	if (ngxData.AIR_annunPackTripOff[1] != data.AIR_annunPackTripOff[1]) {
-		ngxData.AIR_annunPackTripOff[1] = data.AIR_annunPackTripOff[1];
-		js["AIR_annunPackTripOff_2"] = data.AIR_annunPackTripOff[1] != 0;
+	if (ngxData.WING_BODY_OVERHEAT_2_Light_Status != data.WING_BODY_OVERHEAT_2_Light_Status) {
+		ngxData.WING_BODY_OVERHEAT_2_Light_Status = data.WING_BODY_OVERHEAT_2_Light_Status;
+		js["AIR_annunWingBodyOverheat_2"] = data.WING_BODY_OVERHEAT_2_Light_Status != 0;
 	}
-	if (ngxData.AIR_annunWingBodyOverheat[0] != data.AIR_annunWingBodyOverheat[0]) {
-		ngxData.AIR_annunWingBodyOverheat[0] = data.AIR_annunWingBodyOverheat[0];
-		js["AIR_annunWingBodyOverheat_1"] = data.AIR_annunWingBodyOverheat[0] != 0;
+	if (ngxData.BLEED_TRIP_OFF_1_Light_Status != data.BLEED_TRIP_OFF_1_Light_Status) {
+		ngxData.BLEED_TRIP_OFF_1_Light_Status = data.BLEED_TRIP_OFF_1_Light_Status;
+		js["AIR_annunBleedTripOff_1"] = data.BLEED_TRIP_OFF_1_Light_Status != 0;
 	}
-	if (ngxData.AIR_annunWingBodyOverheat[1] != data.AIR_annunWingBodyOverheat[1]) {
-		ngxData.AIR_annunWingBodyOverheat[1] = data.AIR_annunWingBodyOverheat[1];
-		js["AIR_annunWingBodyOverheat_2"] = data.AIR_annunWingBodyOverheat[1] != 0;
-	}
-	if (ngxData.AIR_annunBleedTripOff[0] != data.AIR_annunBleedTripOff[0]) {
-		ngxData.AIR_annunBleedTripOff[0] = data.AIR_annunBleedTripOff[0];
-		js["AIR_annunBleedTripOff_1"] = data.AIR_annunBleedTripOff[0] != 0;
-	}
-	if (ngxData.AIR_annunBleedTripOff[1] != data.AIR_annunBleedTripOff[1]) {
-		ngxData.AIR_annunBleedTripOff[1] = data.AIR_annunBleedTripOff[1];
-		js["AIR_annunBleedTripOff_2"] = data.AIR_annunBleedTripOff[1] != 0;
+	if (ngxData.BLEED_TRIP_OFF_2_Light_Status != data.BLEED_TRIP_OFF_2_Light_Status) {
+		ngxData.BLEED_TRIP_OFF_2_Light_Status = data.BLEED_TRIP_OFF_2_Light_Status;
+		js["AIR_annunBleedTripOff_2"] = data.BLEED_TRIP_OFF_2_Light_Status != 0;
 	}
 	//if (ngxData.WARN_annunFIRE_WARN[0] != data.WARN_annunFIRE_WARN[0]) {
 	//	ngxData.WARN_annunFIRE_WARN[0] = data.WARN_annunFIRE_WARN[0];
