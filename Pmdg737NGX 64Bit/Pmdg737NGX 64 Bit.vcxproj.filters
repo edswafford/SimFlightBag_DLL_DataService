@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="External Source Files">
+      <UniqueIdentifier>{b8bfdc50-214c-4000-8928-783a2a869b9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External Source Files\logger">
+      <UniqueIdentifier>{44a6ec0d-0653-4a49-8eea-4f50b38efa24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PMDG Commmon Source Files">
+      <UniqueIdentifier>{0fe56342-1f63-4d0d-8e8f-3f1e456a65f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{400ca5f0-5a31-419f-9a14-b1d531907d7a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\external\Public\logger\logger.cpp">
+      <Filter>External Source Files\logger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Pmdg737NGXCommon\Pmdg737ngx.cpp">
+      <Filter>PMDG Commmon Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Pmdg737NGXCommon\SimDataService.cpp">
+      <Filter>PMDG Commmon Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Pmdg737NGXCommon\dllmain.cpp">
+      <Filter>PMDG Commmon Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\flightsim_json.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SimConnectErrors.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\GenericSimConnect.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\external\Public\logger\logger.h">
+      <Filter>External Source Files\logger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\external\Public\aysnc_queue.h">
+      <Filter>External Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\external\Public\inheritableEnableShareFromThis.h">
+      <Filter>External Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Pmdg737NGXCommon\Pmdg737ngx.h">
+      <Filter>PMDG Commmon Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Pmdg737NGXCommon\SimDataService.h">
+      <Filter>PMDG Commmon Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ISimDataService.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\flightsim_json.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GeneralSimData.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GenericSimConnect.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\framework.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
