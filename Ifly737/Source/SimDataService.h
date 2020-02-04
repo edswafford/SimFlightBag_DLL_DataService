@@ -7,7 +7,11 @@
 #include "flightsim_json.h"
 #include <ifly737.h>
 
-
+enum ProcessResult {
+	connected,
+	initialized,
+	failed,
+};
 
 // Declare a structure to hold the send IDs and identification strings
 struct  SimConnectRequest {
@@ -23,7 +27,7 @@ public:
 	~SimDataService();
 
 	bool open(std::shared_ptr<AsyncQueue<std::string>> const& msg_queue);
-	bool process(std::shared_ptr<AsyncQueue<std::string>> const& data_queue,
+	ProcessResult process(std::shared_ptr<AsyncQueue<std::string>> const& data_queue,
 		std::shared_ptr<AsyncQueue<std::string>> const& msg_queue, bool& all_data_requested);
 	void close();
 

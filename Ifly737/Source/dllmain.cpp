@@ -3,7 +3,7 @@
 #include <logger\logger.h>
 #include "GenericSimConnect.h"
 
-logger LOG("SimFlightBagServer.log");
+logger LOG("IFly737 DLL SimFlightBagServer.log");
 //
 // Used to send LOG messages to Windows --> SendMessage -- not needed in DLL
 //
@@ -30,5 +30,7 @@ extern "C" __declspec(dllexport) ISimDataService *
 __cdecl createSimDataConnection(std::shared_ptr<AsyncQueue<std::string>> const& dataQueue,
 	std::shared_ptr<AsyncQueue<std::string>> const& msgQueue)
 {
+	LOG() << "Starting IFly 737 NGX Data Service";
+
 	return new GenericSimConnect(dataQueue, msgQueue, std::string("Starting IFly 737 NGX Data Service"));
 }

@@ -174,6 +174,7 @@ std::string Ifly737::process737()
 			
 			json_string = initialize();
 			if (json_string != "null") {
+				LOG() << json_string;
 				json js = {
 					{"messageType", "737ngx"},
 					{"Initialize", json::parse(json_string)}
@@ -197,6 +198,7 @@ std::string Ifly737::process737()
 		try {
 			json_string = buildJsonIfly737();
 			if (json_string != "null") {
+				LOG() << json_string;
 				json js = {
 					{"messageType", "737ngx"},
 					{"AircraftChanges", json::parse(json_string)}
@@ -230,12 +232,12 @@ std::string Ifly737::initialize()
 	js["IRS_DisplaySelector"] = shareMemSDK->DSPL_SEL_Switches_Status;
 	js["IRS_SysDisplay_R"] = shareMemSDK->SYS_DSPL_Switches_Status;
 	//	js["COMM_ServiceInterphoneSw"] = shareMemSDK->COMM_ServiceInterphoneSw != 0;
-	js["OXY_SwNormal"] = shareMemSDK->Oxygen_Switch_Status != 0;
+	js["OXY_SwNormal"] = shareMemSDK->Oxygen_Switch_Status == 0;
 
 	//	js["FLTREC_SwNormal"] = !shareMemSDK->FLTREC_SwNormal != 0;
 
 	js["FCTL_YawDamper_Sw"] = shareMemSDK->Yaw_Damper_Switches_Status != 0;
-	js["FCTL_AltnFlaps_Control_Sw"] = shareMemSDK->Altn_Flap_Switches_Status != 0;
+	js["FCTL_AltnFlaps_Control_Sw"] = shareMemSDK->Altn_Flap_Switches_Status;
 	js["FCTL_AltnFlaps_Sw_ARM"] = shareMemSDK->Altn_Flap_Master_Switches_Status != 0;
 	js["NAVDIS_VHFNavSelector"] = shareMemSDK->VHF_NAV_Switches_Status;
 	js["NAVDIS_IRSSelector"] = shareMemSDK->IRS_Switches_Status;
@@ -245,11 +247,11 @@ std::string Ifly737::initialize()
 	js["FUEL_CrossFeedSw"] = shareMemSDK->Fuel_Crossfeed_Selector_Status != 0;
 	js["ELEC_DCMeterSelector"] = shareMemSDK->DC_Meters_Selector_Status;
 	js["ELEC_ACMeterSelector"] = shareMemSDK->AC_Meters_Selector_Status;
-	js["ELEC_BatSelector"] = shareMemSDK->Battery_Switch_Status != 0;
+	js["ELEC_BatSelector"] = shareMemSDK->Battery_Switch_Status == 0 ? 1 : 0;
 	js["ELEC_CabUtilSw"] = shareMemSDK->CAB_UTIL_Switch_Status != 0;
 	js["ELEC_IFEPassSeatSw"] = shareMemSDK->IFE_PASS_SEAT_Switches_Status != 0;
 	js["ELEC_StandbyPowerSelector"] = shareMemSDK->STANDBY_POWER_Switch_Status;
-	js["ELEC_GrdPwrSw"] = shareMemSDK->Ground_Power_Switches_Status != 0;
+	js["ELEC_GrdPwrSw"] = shareMemSDK->Ground_Power_Switches_Status;
 	js["ELEC_BusTransSw_AUTO"] = shareMemSDK->Bus_Transfer_Switches_Status != 0;
 	js["OH_WiperLSelector"] = shareMemSDK->Wiper_L_Switches_Status;
 	js["OH_WiperRSelector"] = shareMemSDK->Wiper_R_Switches_Status;
@@ -272,7 +274,7 @@ std::string Ifly737::initialize()
 	js["APU_Selector"] = shareMemSDK->APU_Switches_Status;
 	js["ENG_IgnitionSelector"] = shareMemSDK->Ignition_Select_Switches_Status;
 	//	js["LTS_LogoSw"] = shareMemSDK->LTS_LogoSw != 0;
-	js["LTS_PositionSw"] = shareMemSDK->Position_Light_Status != 0;
+	js["LTS_PositionSw"] = shareMemSDK->Position_Light_Status;
 	js["LTS_AntiCollisionSw"] = shareMemSDK->Anti_Collision_Light_Status != 0;
 	js["LTS_WingSw"] = shareMemSDK->Wing_Light_Status != 0;
 	js["LTS_WheelWellSw"] = shareMemSDK->WHEEL_WELL_Light_Status != 0;
@@ -318,8 +320,8 @@ std::string Ifly737::initialize()
 	//	js["ICE_WindowHeatTestSw"] = shareMemSDK->ICE_WindowHeatTestSw;
 	js["IRS_ModeSelector_1"] = shareMemSDK->IRS_1_Switches_Status;
 	js["IRS_ModeSelector_2"] = shareMemSDK->IRS_2_Switches_Status;
-	js["ENG_EECSwitch_1"] = shareMemSDK->EEC_1_Switch_Status != 0;
-	js["ENG_EECSwitch_2"] = shareMemSDK->EEC_2_Switch_Status != 0;
+	js["ENG_EECSwitch_1"] = shareMemSDK->EEC_1_Switch_Status == 2;
+	js["ENG_EECSwitch_2"] = shareMemSDK->EEC_2_Switch_Status == 2;
 	js["FCTL_FltControl_Sw_1"] = shareMemSDK->Flight_Control_A_Switches_Status;
 	js["FCTL_FltControl_Sw_2"] = shareMemSDK->Flight_Control_B_Switches_Status;
 	js["FCTL_Spoiler_Sw_1"] = shareMemSDK->Spoiler_A_Switches_Status != 0;
@@ -510,7 +512,7 @@ std::string Ifly737::initialize()
 	//js["IRS_annunDC_FAIL_1"] = shareMemSDK->IRS_annunDC_FAIL[0] != 0;
 	//js["IRS_annunDC_FAIL_2"] = shareMemSDK->IRS_annunDC_FAIL[1] != 0;
 	js["ENG_annunREVERSER_1"] = shareMemSDK->REVERSER_1_Light_Status != 0;
-	//	js["ENG_annunREVERSER_2"] = shareMemSDK->ENG_annunREVERSER[1] != 0;
+	js["ENG_annunREVERSER_2"] = shareMemSDK->REVERSER_2_Light_Status != 0;
 	js["ENG_annunENGINE_CONTROL_1"] = shareMemSDK->ENGINE_CONTROL_1_Light_Status != 0;
 	js["ENG_annunENGINE_CONTROL_2"] = shareMemSDK->ENGINE_CONTROL_2_Light_Status != 0;
 	//	js["ENG_annunALTN_1"] = shareMemSDK->ENG_annunALTN[0] != 0;
@@ -580,9 +582,9 @@ std::string Ifly737::initialize()
 	//js["MAIN_annunAT_2"] = shareMemSDK->MAIN_annunAT[1] != 0;
 	//js["MAIN_annunFMC_1"] = shareMemSDK->MAIN_annunFMC[0] != 0;
 	//js["MAIN_annunFMC_2"] = shareMemSDK->MAIN_annunFMC[1] != 0;
-	//js["MAIN_annunGEAR_transit_1"] = shareMemSDK->MAIN_annunGEAR_transit[0] != 0;
-	//js["MAIN_annunGEAR_transit_2"] = shareMemSDK->MAIN_annunGEAR_transit[1] != 0;
-	//js["MAIN_annunGEAR_transit_3"] = shareMemSDK->MAIN_annunGEAR_transit[2] != 0;
+	js["MAIN_annunGEAR_transit_1"] = shareMemSDK->LEFT_GEAR_RedLight_Status != 0;
+	js["MAIN_annunGEAR_transit_2"] = shareMemSDK->NOSE_GEAR_RedLight_Status != 0;
+	js["MAIN_annunGEAR_transit_3"] = shareMemSDK->RIGHT_GEAR_RedLight_Status != 0;
 	js["MAIN_annunGEAR_locked_1"] = shareMemSDK->LEFT_GEAR_GreenLight_Status != 0;
 	js["MAIN_annunGEAR_locked_2"] = shareMemSDK->NOSE_GEAR_GreenLight_Status != 0;
 	js["MAIN_annunGEAR_locked_3"] = shareMemSDK->RIGHT_GEAR_GreenLight_Status != 0;
@@ -660,12 +662,9 @@ std::string Ifly737::buildJsonIfly737()
 	//}
 	if (ngxData.Oxygen_Switch_Status != shareMemSDK->Oxygen_Switch_Status) {
 		ngxData.Oxygen_Switch_Status = shareMemSDK->Oxygen_Switch_Status;
-		js["OXY_SwNormal"] = shareMemSDK->Oxygen_Switch_Status != 0;
+		js["OXY_SwNormal"] = shareMemSDK->Oxygen_Switch_Status == 0;
 	}
-//	if (ngxData.FLTREC_SwNormal != shareMemSDK->FLTREC_SwNormal) {
-//		ngxData.FLTREC_SwNormal = shareMemSDK->FLTREC_SwNormal;
-//		js["FLTREC_SwNormal"] = !shareMemSDK->FLTREC_SwNormal != 0;
-//	}
+
 	if (ngxData.Yaw_Damper_Switches_Status != shareMemSDK->Yaw_Damper_Switches_Status) {
 		ngxData.Yaw_Damper_Switches_Status = shareMemSDK->Yaw_Damper_Switches_Status;
 		js["FCTL_YawDamper_Sw"] = shareMemSDK->Yaw_Damper_Switches_Status != 0;
@@ -712,7 +711,7 @@ std::string Ifly737::buildJsonIfly737()
 	//}
 	if (ngxData.Battery_Switch_Status != shareMemSDK->Battery_Switch_Status) {
 		ngxData.Battery_Switch_Status = shareMemSDK->Battery_Switch_Status;
-		js["ELEC_BatSelector"] = shareMemSDK->Battery_Switch_Status != 0;
+		js["ELEC_BatSelector"] = shareMemSDK->Battery_Switch_Status == 0? 1 : 0;
 	}
 	if (ngxData.CAB_UTIL_Switch_Status != shareMemSDK->CAB_UTIL_Switch_Status) {
 		ngxData.CAB_UTIL_Switch_Status = shareMemSDK->CAB_UTIL_Switch_Status;
@@ -728,7 +727,7 @@ std::string Ifly737::buildJsonIfly737()
 	}
 	if (ngxData.Ground_Power_Switches_Status != shareMemSDK->Ground_Power_Switches_Status) {
 		ngxData.Ground_Power_Switches_Status = shareMemSDK->Ground_Power_Switches_Status;
-		js["ELEC_GrdPwrSw"] = shareMemSDK->Ground_Power_Switches_Status != 0;
+		js["ELEC_GrdPwrSw"] = shareMemSDK->Ground_Power_Switches_Status;
 	}
 	if (ngxData.Bus_Transfer_Switches_Status != shareMemSDK->Bus_Transfer_Switches_Status) {
 		ngxData.Bus_Transfer_Switches_Status = shareMemSDK->Bus_Transfer_Switches_Status;
@@ -820,7 +819,7 @@ std::string Ifly737::buildJsonIfly737()
 	//}
 	if (ngxData.Position_Light_Status != shareMemSDK->Position_Light_Status) {
 		ngxData.Position_Light_Status = shareMemSDK->Position_Light_Status;
-		js["LTS_PositionSw"] = shareMemSDK->Position_Light_Status != 0;
+		js["LTS_PositionSw"] = shareMemSDK->Position_Light_Status;
 	}
 	if (ngxData.Anti_Collision_Light_Status != shareMemSDK->Anti_Collision_Light_Status) {
 		ngxData.Anti_Collision_Light_Status = shareMemSDK->Anti_Collision_Light_Status;
@@ -999,19 +998,19 @@ std::string Ifly737::buildJsonIfly737()
 
 	if (ngxData.IRS_1_Switches_Status != shareMemSDK->IRS_1_Switches_Status) {
 		ngxData.IRS_1_Switches_Status = shareMemSDK->IRS_1_Switches_Status;
-		js["IRS_ModeSelector_1"] = shareMemSDK->IRS_1_Switches_Status != 0;
+		js["IRS_ModeSelector_1"] = shareMemSDK->IRS_1_Switches_Status;
 	}
 	if (ngxData.IRS_2_Switches_Status != shareMemSDK->IRS_2_Switches_Status) {
 		ngxData.IRS_2_Switches_Status = shareMemSDK->IRS_2_Switches_Status;
-		js["IRS_ModeSelector_2"] = shareMemSDK->IRS_2_Switches_Status != 0;
+		js["IRS_ModeSelector_2"] = shareMemSDK->IRS_2_Switches_Status;
 	}
 	if (ngxData.EEC_1_Switch_Status != shareMemSDK->EEC_1_Switch_Status) {
 		ngxData.EEC_1_Switch_Status = shareMemSDK->EEC_1_Switch_Status;
-		js["ENG_EECSwitch_1"] = shareMemSDK->EEC_1_Switch_Status != 0;
+		js["ENG_EECSwitch_1"] = shareMemSDK->EEC_1_Switch_Status == 2;
 	}
 	if (ngxData.EEC_2_Switch_Status != shareMemSDK->EEC_2_Switch_Status) {
 		ngxData.EEC_2_Switch_Status = shareMemSDK->EEC_2_Switch_Status;
-		js["ENG_EECSwitch_2"] = shareMemSDK->EEC_2_Switch_Status != 0;
+		js["ENG_EECSwitch_2"] = shareMemSDK->EEC_2_Switch_Status == 2;
 	}
 	if (ngxData.Flight_Control_A_Switches_Status != shareMemSDK->Flight_Control_A_Switches_Status) {
 		ngxData.Flight_Control_A_Switches_Status = shareMemSDK->Flight_Control_A_Switches_Status;
@@ -1319,14 +1318,17 @@ std::string Ifly737::buildJsonIfly737()
 	if (ngxData.LEFT_GEAR_GreenLight_Status != shareMemSDK->LEFT_GEAR_GreenLight_Status) {
 		ngxData.LEFT_GEAR_GreenLight_Status = shareMemSDK->LEFT_GEAR_GreenLight_Status;
 		js["GEAR_annunOvhdLEFT"] = shareMemSDK->LEFT_GEAR_GreenLight_Status != 0;
+		js["MAIN_annunGEAR_locked_1"] = shareMemSDK->LEFT_GEAR_GreenLight_Status != 0;
 	}
 	if (ngxData.NOSE_GEAR_GreenLight_Status != shareMemSDK->NOSE_GEAR_GreenLight_Status) {
 		ngxData.NOSE_GEAR_GreenLight_Status = shareMemSDK->NOSE_GEAR_GreenLight_Status;
 		js["GEAR_annunOvhdNOSE"] = shareMemSDK->NOSE_GEAR_GreenLight_Status != 0;
+		js["MAIN_annunGEAR_locked_2"] = shareMemSDK->NOSE_GEAR_GreenLight_Status != 0;
 	}
 	if (ngxData.RIGHT_GEAR_GreenLight_Status != shareMemSDK->RIGHT_GEAR_GreenLight_Status) {
 		ngxData.RIGHT_GEAR_GreenLight_Status = shareMemSDK->RIGHT_GEAR_GreenLight_Status;
 		js["GEAR_annunOvhdRIGHT"] = shareMemSDK->RIGHT_GEAR_GreenLight_Status != 0;
+		js["MAIN_annunGEAR_locked_3"] = shareMemSDK->RIGHT_GEAR_GreenLight_Status != 0;
 	}
 	//if (ngxData.FLTREC_annunOFF != shareMemSDK->FLTREC_annunOFF) {
 	//	ngxData.FLTREC_annunOFF = shareMemSDK->FLTREC_annunOFF;
@@ -2053,31 +2055,19 @@ std::string Ifly737::buildJsonIfly737()
 	//	ngxData.MAIN_annunFMC[1] = shareMemSDK->MAIN_annunFMC[1];
 	//	js["MAIN_annunFMC_2"] = shareMemSDK->MAIN_annunFMC[1] != 0;
 	//}
-	//if (ngxData.MAIN_annunGEAR_transit[0] != shareMemSDK->MAIN_annunGEAR_transit[0]) {
-	//	ngxData.MAIN_annunGEAR_transit[0] = shareMemSDK->MAIN_annunGEAR_transit[0];
-	//	js["MAIN_annunGEAR_transit_1"] = shareMemSDK->MAIN_annunGEAR_transit[0] != 0;
-	//}
-	//if (ngxData.MAIN_annunGEAR_transit[1] != shareMemSDK->MAIN_annunGEAR_transit[1]) {
-	//	ngxData.MAIN_annunGEAR_transit[1] = shareMemSDK->MAIN_annunGEAR_transit[1];
-	//	js["MAIN_annunGEAR_transit_2"] = shareMemSDK->MAIN_annunGEAR_transit[1] != 0;
-	//}
-	//if (ngxData.MAIN_annunGEAR_transit[2] != shareMemSDK->MAIN_annunGEAR_transit[2]) {
-	//	ngxData.MAIN_annunGEAR_transit[2] = shareMemSDK->MAIN_annunGEAR_transit[2];
-	//	js["MAIN_annunGEAR_transit_3"] = shareMemSDK->MAIN_annunGEAR_transit[2] != 0;
-	//}
+	if (ngxData.LEFT_GEAR_RedLight_Status != shareMemSDK->LEFT_GEAR_RedLight_Status) {
+		ngxData.LEFT_GEAR_RedLight_Status = shareMemSDK->LEFT_GEAR_RedLight_Status;
+		js["MAIN_annunGEAR_transit_1"] = shareMemSDK->LEFT_GEAR_RedLight_Status != 0;
+	}
+	if (ngxData.NOSE_GEAR_RedLight_Status != shareMemSDK->NOSE_GEAR_RedLight_Status) {
+		ngxData.NOSE_GEAR_RedLight_Status = shareMemSDK->NOSE_GEAR_RedLight_Status;
+		js["MAIN_annunGEAR_transit_2"] = shareMemSDK->NOSE_GEAR_RedLight_Status != 0;
+	}
+	if (ngxData.RIGHT_GEAR_RedLight_Status != shareMemSDK->RIGHT_GEAR_RedLight_Status) {
+		ngxData.RIGHT_GEAR_RedLight_Status = shareMemSDK->RIGHT_GEAR_RedLight_Status;
+		js["MAIN_annunGEAR_transit_3"] = shareMemSDK->RIGHT_GEAR_RedLight_Status != 0;
+	}
 
-	if (ngxData.LEFT_GEAR_GreenLight_Status != shareMemSDK->LEFT_GEAR_GreenLight_Status) {
-		ngxData.LEFT_GEAR_GreenLight_Status = shareMemSDK->LEFT_GEAR_GreenLight_Status;
-		js["MAIN_annunGEAR_locked_1"] = shareMemSDK->LEFT_GEAR_GreenLight_Status != 0;
-	}
-	if (ngxData.NOSE_GEAR_GreenLight_Status != shareMemSDK->NOSE_GEAR_GreenLight_Status) {
-		ngxData.NOSE_GEAR_GreenLight_Status = shareMemSDK->NOSE_GEAR_GreenLight_Status;
-		js["MAIN_annunGEAR_locked_2"] = shareMemSDK->NOSE_GEAR_GreenLight_Status != 0;
-	}
-	if (ngxData.RIGHT_GEAR_GreenLight_Status != shareMemSDK->RIGHT_GEAR_GreenLight_Status) {
-		ngxData.RIGHT_GEAR_GreenLight_Status = shareMemSDK->RIGHT_GEAR_GreenLight_Status;
-		js["MAIN_annunGEAR_locked_3"] = shareMemSDK->RIGHT_GEAR_GreenLight_Status != 0;
-	}
 
 	//if (ngxData.FIRE_annunENG_OVERHEAT[0] != shareMemSDK->FIRE_annunENG_OVERHEAT[0]) {
 	//	ngxData.FIRE_annunENG_OVERHEAT[0] = shareMemSDK->FIRE_annunENG_OVERHEAT[0];

@@ -194,9 +194,14 @@ bool SimDataService::open(std::shared_ptr<AsyncQueue<std::string>> const& msg_qu
 	return is_connected;
 }
 
-bool SimDataService::process(std::shared_ptr<AsyncQueue<std::string>> const& data_queue,
+ProcessResult SimDataService::process(std::shared_ptr<AsyncQueue<std::string>> const& data_queue,
 	std::shared_ptr<AsyncQueue<std::string>> const& msg_queue, bool& all_data_requested)
 {
+	ProcessResult process_result = ProcessResult::connected;
+
+	if (all_data_requested) {
+		Ifly737::requestInitialization();
+	}
 	if (hSimConnect != nullptr) {
 		SimConnect_CallDispatch(hSimConnect, MyDispatchProcRD, nullptr);
 
@@ -217,7 +222,7 @@ bool SimDataService::process(std::shared_ptr<AsyncQueue<std::string>> const& dat
 				if (json_string != "null") {
 					data_queue->push(json_string);
 				}
-				if (data_initialized) {
+				if (data_initialized || all_data_requested) {
 					const std::string json_737ngx = flightsim_json.build_json_737ngx(commonGeneralSimData);
 					if (json_737ngx != "null")
 					{
@@ -232,7 +237,7 @@ bool SimDataService::process(std::shared_ptr<AsyncQueue<std::string>> const& dat
 			if (data_queue->available()) {
 				const std::string json_string = ifly737->process737();
 				if (!json_string.empty() && json_string != "null") {
-					if (!data_initialized)
+					if (!data_initialized || all_data_requested)
 					{
 						auto js = nlohmann::json::parse(json_string);
 						if (js.find("Initialize") != js.end())
@@ -253,6 +258,7 @@ bool SimDataService::process(std::shared_ptr<AsyncQueue<std::string>> const& dat
 								data_queue->push(json_string);
 							}
 							data_initialized = true;
+							process_result = ProcessResult::initialized;
 						}
 					}
 					else {
@@ -268,13 +274,15 @@ bool SimDataService::process(std::shared_ptr<AsyncQueue<std::string>> const& dat
 			SimConnect_Close(hSimConnect);
 			hSimConnect = nullptr;
 			is_connected = false;
+			process_result = ProcessResult::failed;
 		}
 	}
 	else {
 		is_connected = false;
+		process_result = ProcessResult::failed;
 	}
 
-	return  is_connected;
+	return  process_result;
 }
 
 

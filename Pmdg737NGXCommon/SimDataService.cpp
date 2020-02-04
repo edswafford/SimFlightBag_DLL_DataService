@@ -226,9 +226,15 @@ bool SimDataService::open(std::shared_ptr<AsyncQueue<std::string>> const& msg_qu
 	return is_connected;
 }
 
-bool SimDataService::process(std::shared_ptr<AsyncQueue<std::string>> const& data_queue,
+ProcessResult SimDataService::process(std::shared_ptr<AsyncQueue<std::string>> const& data_queue,
 	std::shared_ptr<AsyncQueue<std::string>> const& msg_queue, bool& all_data_requested)
 {
+	ProcessResult process_result = ProcessResult::connected;
+
+	if (all_data_requested) {
+		B737ngx::requestInitialData();
+	}
+
 	if (hSimConnect != nullptr) {
 		SimConnect_CallDispatch(hSimConnect, MyDispatchProcRD, nullptr);
 
@@ -285,6 +291,8 @@ bool SimDataService::process(std::shared_ptr<AsyncQueue<std::string>> const& dat
 								data_queue->push(json_string);
 							}
 							data_initialized = true;
+							process_result = ProcessResult::initialized;
+
 						}
 					}
 					else {
@@ -327,13 +335,15 @@ bool SimDataService::process(std::shared_ptr<AsyncQueue<std::string>> const& dat
 			SimConnect_Close(hSimConnect);
 			hSimConnect = nullptr;
 			is_connected = false;
+			process_result = ProcessResult::failed;
 		}
 	}
 	else {
 		is_connected = false;
+		process_result = ProcessResult::failed;
 	}
 
-	return  is_connected;
+	return   process_result;
 }
 
 

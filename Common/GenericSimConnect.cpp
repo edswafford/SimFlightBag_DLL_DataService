@@ -86,7 +86,11 @@ void GenericSimConnect::timer()
 			// --
 			if (sim_connect_is_open)
 			{
-				sim_connect_is_open = dataService.process(data_queue_, msg_queue_, all_data_requested);
+				ProcessResult process_result = dataService.process(data_queue_, msg_queue_, all_data_requested);
+				sim_connect_is_open = process_result != ProcessResult::failed;
+				if (process_result == ProcessResult::initialized && all_data_requested) {
+					all_data_requested = false;
+				}
 			}
 		}
 		elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start);

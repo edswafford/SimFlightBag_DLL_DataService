@@ -73,7 +73,8 @@ private:
 
 
 public:
-	
+	static void requestInitialization() { initialization_requested = true; }
+
 	static struct ShareMemorySDK* shareMemSDK;
 
 	char* simData;
