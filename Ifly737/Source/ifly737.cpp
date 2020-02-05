@@ -252,16 +252,16 @@ std::string Ifly737::initialize()
 	js["ELEC_IFEPassSeatSw"] = shareMemSDK->IFE_PASS_SEAT_Switches_Status != 0;
 	js["ELEC_StandbyPowerSelector"] = shareMemSDK->STANDBY_POWER_Switch_Status;
 	js["ELEC_GrdPwrSw"] = shareMemSDK->Ground_Power_Switches_Status;
-	js["ELEC_BusTransSw_AUTO"] = shareMemSDK->Bus_Transfer_Switches_Status != 0;
+	js["ELEC_BusTransSw_AUTO"] = shareMemSDK->Bus_Transfer_Switches_Status == 0;
 	js["OH_WiperLSelector"] = shareMemSDK->Wiper_L_Switches_Status;
 	js["OH_WiperRSelector"] = shareMemSDK->Wiper_R_Switches_Status;
 	//	js["LTS_CircuitBreakerKnob"] = shareMemSDK->LTS_CircuitBreakerKnob;
 	//	js["LTS_CircuitBreakerKnob"] = shareMemSDK->LTS_CircuitBreakerKnob;
 	//	js["LTS_OvereadPanelKnob"] = shareMemSDK->LTS_OvereadPanelKnob;
-	js["AIR_EquipCoolingSupplyNORM"] = shareMemSDK->Equipment_COOLING_SUPPLY_Switch_Status != 0;
-	js["AIR_EquipCoolingExhaustNORM"] = shareMemSDK->Equipment_COOLING_EXHAUST_Switch_Status != 0;
-	//	js["LTS_EmerExitSelector"] = shareMemSDK->Emergency_Light_Switch_Status;
-	//	js["COMM_NoSmokingSelector"] = shareMemSDK->COMM_NoSmokingSelector;
+	js["AIR_EquipCoolingSupplyNORM"] = shareMemSDK->Equipment_COOLING_SUPPLY_Switch_Status == 0;
+	js["AIR_EquipCoolingExhaustNORM"] = shareMemSDK->Equipment_COOLING_EXHAUST_Switch_Status == 0;
+	js["LTS_EmerExitSelector"] = shareMemSDK->Emergency_Light_Status;
+	js["COMM_NoSmokingSelector"] = shareMemSDK->No_Smoking_Switches_Status;
 	js["COMM_FastenBeltsSelector"] = shareMemSDK->Fasten_Belts_Switches_Status;
 	js["ICE_WingAntiIceSw"] = shareMemSDK->Wing_AntiIce_Switch_Status != 0;
 	//	js["AIR_TempSourceSelector"] = shareMemSDK->AIR_TempSourceSelector;
@@ -332,8 +332,11 @@ std::string Ifly737::initialize()
 	js["FUEL_PumpAftSw_2"] = shareMemSDK->Fuel_R_AFT_Switch_Status != 0;
 	js["FUEL_PumpCtrSw_1"] = shareMemSDK->Fuel_CENTER_L_Switch_Status != 0;
 	js["FUEL_PumpCtrSw_2"] = shareMemSDK->Fuel_CENTER_L_Switch_Status != 0;
-	js["ELEC_IDGDisconnectSw_1"] = shareMemSDK->Generator_1_Drive_Disconnect_Switch_Status != 0;
-	js["ELEC_IDGDisconnectSw_2"] = shareMemSDK->Generator_2_Drive_Disconnect_Switch_Status != 0;
+	//
+	//
+	// 0 == off, 1 == guard open, 2 = on 
+	js["ELEC_IDGDisconnectSw_1"] = shareMemSDK->Generator_1_Drive_Disconnect_Switch_Status == 0;
+	js["ELEC_IDGDisconnectSw_2"] = shareMemSDK->Generator_2_Drive_Disconnect_Switch_Status == 0;
 	//	js["ELEC_GenSw_1"] = shareMemSDK->ELEC_GenSw[0] != 0;
 	//	js["ELEC_GenSw_2"] = shareMemSDK->ELEC_GenSw[1] != 0;
 	js["ELEC_APUGenSw_1"] = shareMemSDK->APU_Generator_1_Switches_Status != 0;
@@ -404,7 +407,7 @@ std::string Ifly737::initialize()
 	js["FCTL_annunYAW_DAMPER"] = shareMemSDK->YAW_DAMPER_Light_Status != 0;
 	js["FCTL_annunLOW_QUANTITY"] = shareMemSDK->LOW_QUANTITY_Light_Status != 0;
 	js["FCTL_annunLOW_PRESSURE"] = shareMemSDK->LOW_PRESSURE_BACKUP_Light_Status != 0;
-	js["FCTL_annunLOW_STBY_RUD_ON"] = shareMemSDK->STBY_RUD_ON_Light_Status != 0;
+//	js["FCTL_annunLOW_STBY_RUD_ON"] = shareMemSDK->STBY_RUD_ON_Light_Status != 0;
 	js["FCTL_annunFEEL_DIFF_PRESS"] = shareMemSDK->FEEL_DIFF_PRESS_Light_Status != 0;
 	js["FCTL_annunSPEED_TRIM_FAIL"] = shareMemSDK->SPEED_TRIM_FAIL_Light_Status != 0;
 	js["FCTL_annunMACH_TRIM_FAIL"] = shareMemSDK->MACH_TRIM_FAIL_Light_Status != 0;
@@ -729,9 +732,12 @@ std::string Ifly737::buildJsonIfly737()
 		ngxData.Ground_Power_Switches_Status = shareMemSDK->Ground_Power_Switches_Status;
 		js["ELEC_GrdPwrSw"] = shareMemSDK->Ground_Power_Switches_Status;
 	}
+	//
+	// ELEC_BusTransSw_AUTO
+	// 0 == Auto, 1 == off, 2== guard open
 	if (ngxData.Bus_Transfer_Switches_Status != shareMemSDK->Bus_Transfer_Switches_Status) {
 		ngxData.Bus_Transfer_Switches_Status = shareMemSDK->Bus_Transfer_Switches_Status;
-		js["ELEC_BusTransSw_AUTO"] = shareMemSDK->Bus_Transfer_Switches_Status != 0;
+		js["ELEC_BusTransSw_AUTO"] = shareMemSDK->Bus_Transfer_Switches_Status == 0;
 	}
 	if (ngxData.Wiper_L_Switches_Status != shareMemSDK->Wiper_L_Switches_Status) {
 		ngxData.Wiper_L_Switches_Status = shareMemSDK->Wiper_L_Switches_Status;
@@ -755,20 +761,23 @@ std::string Ifly737::buildJsonIfly737()
 	//}
 	if (ngxData.Equipment_COOLING_SUPPLY_Switch_Status != shareMemSDK->Equipment_COOLING_SUPPLY_Switch_Status) {
 		ngxData.Equipment_COOLING_SUPPLY_Switch_Status = shareMemSDK->Equipment_COOLING_SUPPLY_Switch_Status;
-		js["AIR_EquipCoolingSupplyNORM"] = shareMemSDK->Equipment_COOLING_SUPPLY_Switch_Status != 0;
+		js["AIR_EquipCoolingSupplyNORM"] = shareMemSDK->Equipment_COOLING_SUPPLY_Switch_Status == 0;
 	}
 	if (ngxData.Equipment_COOLING_EXHAUST_Switch_Status != shareMemSDK->Equipment_COOLING_EXHAUST_Switch_Status) {
 		ngxData.Equipment_COOLING_EXHAUST_Switch_Status = shareMemSDK->Equipment_COOLING_EXHAUST_Switch_Status;
-		js["AIR_EquipCoolingExhaustNORM"] = shareMemSDK->Equipment_COOLING_EXHAUST_Switch_Status != 0;
+		js["AIR_EquipCoolingExhaustNORM"] = shareMemSDK->Equipment_COOLING_EXHAUST_Switch_Status == 0;
 	}
-//	if (ngxData.Emergency_Light_Switch_Status != shareMemSDK->Emergency_Light_Switch_Status) {
-//		ngxData.Emergency_Light_Switch_Status = shareMemSDK->Emergency_Light_Switch_Status;
-//		js["LTS_EmerExitSelector"] = shareMemSDK->Emergency_Light_Switch_Status;
-//	}
-	//if (ngxData.COMM_NoSmokingSelector != shareMemSDK->COMM_NoSmokingSelector) {
-	//	ngxData.COMM_NoSmokingSelector = shareMemSDK->COMM_NoSmokingSelector;
-	//	js["COMM_NoSmokingSelector"] = shareMemSDK->COMM_NoSmokingSelector != 0;
-	//}
+	//
+	// LTS_EmerExitSelector
+	// 0 == arm, 1 == off, 2== guard 3 == on
+	if (ngxData.Emergency_Light_Status != shareMemSDK->Emergency_Light_Status) {
+		ngxData.Emergency_Light_Status = shareMemSDK->Emergency_Light_Status;
+		js["LTS_EmerExitSelector"] = shareMemSDK->Emergency_Light_Status;
+	}
+	if (ngxData.No_Smoking_Switches_Status != shareMemSDK->No_Smoking_Switches_Status) {
+		ngxData.No_Smoking_Switches_Status = shareMemSDK->No_Smoking_Switches_Status;
+		js["COMM_NoSmokingSelector"] = shareMemSDK->No_Smoking_Switches_Status != 0;
+	}
 	if (ngxData.Fasten_Belts_Switches_Status != shareMemSDK->Fasten_Belts_Switches_Status) {
 		ngxData.Fasten_Belts_Switches_Status = shareMemSDK->Fasten_Belts_Switches_Status;
 		js["COMM_FastenBeltsSelector"] = shareMemSDK->Fasten_Belts_Switches_Status != 0;
@@ -1054,11 +1063,11 @@ std::string Ifly737::buildJsonIfly737()
 	}
 	if (ngxData.Generator_1_Drive_Disconnect_Switch_Status != shareMemSDK->Generator_1_Drive_Disconnect_Switch_Status) {
 		ngxData.Generator_1_Drive_Disconnect_Switch_Status = shareMemSDK->Generator_1_Drive_Disconnect_Switch_Status;
-		js["ELEC_IDGDisconnectSw_1"] = shareMemSDK->Generator_1_Drive_Disconnect_Switch_Status != 0;
+		js["ELEC_IDGDisconnectSw_1"] = shareMemSDK->Generator_1_Drive_Disconnect_Switch_Status == 0;
 	}
 	if (ngxData.Generator_2_Drive_Disconnect_Switch_Status != shareMemSDK->Generator_2_Drive_Disconnect_Switch_Status) {
 		ngxData.Generator_2_Drive_Disconnect_Switch_Status = shareMemSDK->Generator_2_Drive_Disconnect_Switch_Status;
-		js["ELEC_IDGDisconnectSw_2"] = shareMemSDK->Generator_2_Drive_Disconnect_Switch_Status != 0;
+		js["ELEC_IDGDisconnectSw_2"] = shareMemSDK->Generator_2_Drive_Disconnect_Switch_Status == 0;
 	}
 	//if (ngxData.ELEC_GenSw[0] != shareMemSDK->ELEC_GenSw[0]) {
 	//	ngxData.ELEC_GenSw[0] = shareMemSDK->ELEC_GenSw[0];
@@ -1346,10 +1355,10 @@ std::string Ifly737::buildJsonIfly737()
 		ngxData.LOW_PRESSURE_BACKUP_Light_Status = shareMemSDK->LOW_PRESSURE_BACKUP_Light_Status;
 		js["FCTL_annunLOW_PRESSURE"] = shareMemSDK->LOW_PRESSURE_BACKUP_Light_Status != 0;
 	}
-	if (ngxData.STBY_RUD_ON_Light_Status != shareMemSDK->STBY_RUD_ON_Light_Status) {
-		ngxData.STBY_RUD_ON_Light_Status = shareMemSDK->STBY_RUD_ON_Light_Status;
-		js["FCTL_annunLOW_STBY_RUD_ON"] = shareMemSDK->STBY_RUD_ON_Light_Status != 0;
-	}
+//	if (ngxData.STBY_RUD_ON_Light_Status != shareMemSDK->STBY_RUD_ON_Light_Status) {
+//		ngxData.STBY_RUD_ON_Light_Status = shareMemSDK->STBY_RUD_ON_Light_Status;
+//		js["FCTL_annunLOW_STBY_RUD_ON"] = shareMemSDK->STBY_RUD_ON_Light_Status != 0;
+//	}
 	if (ngxData.FEEL_DIFF_PRESS_Light_Status != shareMemSDK->FEEL_DIFF_PRESS_Light_Status) {
 		ngxData.FEEL_DIFF_PRESS_Light_Status = shareMemSDK->FEEL_DIFF_PRESS_Light_Status;
 		js["FCTL_annunFEEL_DIFF_PRESS"] = shareMemSDK->FEEL_DIFF_PRESS_Light_Status != 0;
