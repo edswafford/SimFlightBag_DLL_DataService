@@ -5,7 +5,9 @@
 #include "ifly737.h"
 #include "logger/logger.h"
 
+
 extern logger LOG;
+bool has_changed(const double a, const double b, const double epsilon);
 
 using json = nlohmann::json;
 bool Ifly737::initialization_requested = false;
@@ -260,7 +262,7 @@ std::string Ifly737::initialize()
 	//	js["LTS_OvereadPanelKnob"] = shareMemSDK->LTS_OvereadPanelKnob;
 	js["AIR_EquipCoolingSupplyNORM"] = shareMemSDK->Equipment_COOLING_SUPPLY_Switch_Status == 0;
 	js["AIR_EquipCoolingExhaustNORM"] = shareMemSDK->Equipment_COOLING_EXHAUST_Switch_Status == 0;
-	js["LTS_EmerExitSelector"] = shareMemSDK->Emergency_Light_Status;
+
 	js["COMM_NoSmokingSelector"] = shareMemSDK->No_Smoking_Switches_Status;
 	js["COMM_FastenBeltsSelector"] = shareMemSDK->Fasten_Belts_Switches_Status;
 	js["ICE_WingAntiIceSw"] = shareMemSDK->Wing_AntiIce_Switch_Status != 0;
@@ -339,8 +341,8 @@ std::string Ifly737::initialize()
 	js["ELEC_IDGDisconnectSw_2"] = shareMemSDK->Generator_2_Drive_Disconnect_Switch_Status == 0;
 	//	js["ELEC_GenSw_1"] = shareMemSDK->ELEC_GenSw[0] != 0;
 	//	js["ELEC_GenSw_2"] = shareMemSDK->ELEC_GenSw[1] != 0;
-	js["ELEC_APUGenSw_1"] = shareMemSDK->APU_Generator_1_Switches_Status != 0;
-	js["ELEC_APUGenSw_2"] = shareMemSDK->APU_Generator_2_Switches_Status != 0;
+	js["ELEC_APUGenSw_1"] = shareMemSDK->APU_Generator_1_Switches_Status;
+	js["ELEC_APUGenSw_2"] = shareMemSDK->APU_Generator_2_Switches_Status;
 	js["ICE_WindowHeatSw_1"] = shareMemSDK->Window_Heat_Switch_1_Status != 0;
 	js["ICE_WindowHeatSw_2"] = shareMemSDK->Window_Heat_Switch_2_Status != 0;
 	js["ICE_WindowHeatSw_3"] = shareMemSDK->Window_Heat_Switch_3_Status != 0;
@@ -453,6 +455,7 @@ std::string Ifly737::initialize()
 	js["WARN_annunENG"] = shareMemSDK->Warning_ENG_Light_Status != 0;
 	js["WARN_annunOVERHEAD"] = shareMemSDK->Warning_OVERHEAD_Light_Status != 0;
 	js["WARN_annunAIR_COND"] = shareMemSDK->Warning_AIR_COND_Light_Status != 0;
+	js["MAIN_BrakePressNeedle"] = shareMemSDK->Hydraulic_Brake_Pressure_status;
 	js["MAIN_annunSPEEDBRAKE_ARMED"] = shareMemSDK->SPEED_BRAKE_ARMED_Light_Status != 0;
 	js["MAIN_annunSPEEDBRAKE_DO_NOT_ARM"] = shareMemSDK->SPEED_BRAKE_DO_NOT_ARM_Light_Status != 0;
 	js["MAIN_annunSPEEDBRAKE_EXTENDED"] = shareMemSDK->SPEEDBRAKES_EXTENDED_Light_Status != 0;
@@ -644,10 +647,9 @@ std::string Ifly737::buildJsonIfly737()
 		js["MCP_FDSw_2"] = shareMemSDK->FD_right_Switches_Status != 0;
 	}
 
-	if (abs(ngxData.Oxygen_Pressure - shareMemSDK->Oxygen_Pressure) > 20)
-	{
+	if (ngxData.Oxygen_Pressure != shareMemSDK->Oxygen_Pressure){
 		ngxData.Oxygen_Pressure = shareMemSDK->Oxygen_Pressure;
-		js["OXY_Needle"] = shareMemSDK->Oxygen_Pressure != 0;
+		js["OXY_Needle"] = shareMemSDK->Oxygen_Pressure;
 	}
 	//if (ngxData.IRS_DisplaySelector != shareMemSDK->IRS_DisplaySelector) {
 	//	ngxData.IRS_DisplaySelector = shareMemSDK->IRS_DisplaySelector;
@@ -767,20 +769,14 @@ std::string Ifly737::buildJsonIfly737()
 		ngxData.Equipment_COOLING_EXHAUST_Switch_Status = shareMemSDK->Equipment_COOLING_EXHAUST_Switch_Status;
 		js["AIR_EquipCoolingExhaustNORM"] = shareMemSDK->Equipment_COOLING_EXHAUST_Switch_Status == 0;
 	}
-	//
-	// LTS_EmerExitSelector
-	// 0 == arm, 1 == off, 2== guard 3 == on
-	if (ngxData.Emergency_Light_Status != shareMemSDK->Emergency_Light_Status) {
-		ngxData.Emergency_Light_Status = shareMemSDK->Emergency_Light_Status;
-		js["LTS_EmerExitSelector"] = shareMemSDK->Emergency_Light_Status;
-	}
+
 	if (ngxData.No_Smoking_Switches_Status != shareMemSDK->No_Smoking_Switches_Status) {
 		ngxData.No_Smoking_Switches_Status = shareMemSDK->No_Smoking_Switches_Status;
 		js["COMM_NoSmokingSelector"] = shareMemSDK->No_Smoking_Switches_Status != 0;
 	}
 	if (ngxData.Fasten_Belts_Switches_Status != shareMemSDK->Fasten_Belts_Switches_Status) {
 		ngxData.Fasten_Belts_Switches_Status = shareMemSDK->Fasten_Belts_Switches_Status;
-		js["COMM_FastenBeltsSelector"] = shareMemSDK->Fasten_Belts_Switches_Status != 0;
+		js["COMM_FastenBeltsSelector"] = shareMemSDK->Fasten_Belts_Switches_Status;
 	}
 	if (ngxData.Wing_AntiIce_Switch_Status != shareMemSDK->Wing_AntiIce_Switch_Status) {
 		ngxData.Wing_AntiIce_Switch_Status = shareMemSDK->Wing_AntiIce_Switch_Status;
@@ -842,6 +838,11 @@ std::string Ifly737::buildJsonIfly737()
 		ngxData.WHEEL_WELL_Light_Status = shareMemSDK->WHEEL_WELL_Light_Status;
 		js["LTS_WheelWellSw"] = shareMemSDK->WHEEL_WELL_Light_Status != 0;
 	}
+	if (has_changed(ngxData.Hydraulic_Brake_Pressure_status, shareMemSDK->Hydraulic_Brake_Pressure_status, 200.0)) {
+		ngxData.Hydraulic_Brake_Pressure_status = shareMemSDK->Hydraulic_Brake_Pressure_status;
+		js["MAIN_BrakePressNeedle"] = shareMemSDK->Hydraulic_Brake_Pressure_status;
+	}
+
 //	if (ngxData.MAIN_NoseWheelSteeringSwNORM != shareMemSDK->MAIN_NoseWheelSteeringSwNORM) {
 //		ngxData.MAIN_NoseWheelSteeringSwNORM = shareMemSDK->MAIN_NoseWheelSteeringSwNORM;
 //		js["MAIN_NoseWheelSteeringSwNORM"] = shareMemSDK->MAIN_NoseWheelSteeringSwNORM != 0;
@@ -1079,11 +1080,11 @@ std::string Ifly737::buildJsonIfly737()
 	//}
 	if (ngxData.APU_Generator_1_Switches_Status != shareMemSDK->APU_Generator_1_Switches_Status) {
 		ngxData.APU_Generator_1_Switches_Status = shareMemSDK->APU_Generator_1_Switches_Status;
-		js["ELEC_APUGenSw_1"] = shareMemSDK->APU_Generator_1_Switches_Status != 0;
+		js["ELEC_APUGenSw_1"] = shareMemSDK->APU_Generator_1_Switches_Status;
 	}
 	if (ngxData.APU_Generator_2_Switches_Status != shareMemSDK->APU_Generator_2_Switches_Status) {
 		ngxData.APU_Generator_2_Switches_Status = shareMemSDK->APU_Generator_2_Switches_Status;
-		js["ELEC_APUGenSw_2"] = shareMemSDK->APU_Generator_2_Switches_Status != 0;
+		js["ELEC_APUGenSw_2"] = shareMemSDK->APU_Generator_2_Switches_Status;
 	}
 	if (ngxData.Window_Heat_Switch_1_Status != shareMemSDK->Window_Heat_Switch_1_Status) {
 		ngxData.Window_Heat_Switch_1_Status = shareMemSDK->Window_Heat_Switch_1_Status;

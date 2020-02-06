@@ -5,6 +5,12 @@
 
 using json = nlohmann::json;
 
+bool has_changed(const double a, const double b, const double epsilon)
+{
+	return fabs(a - b) > epsilon;
+}
+
+
 Flightsim_json::Flightsim_json()
 {
 	gen_data.zulu_time = -1.0;

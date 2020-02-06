@@ -3,6 +3,7 @@
 #include "GeneralSimData.h"
 
 
+
 class Flightsim_json
 {
 public:
@@ -14,10 +15,6 @@ public:
 		return fabs(a - b) < position_epsilon;
 	}
 
-	bool has_changed(const double a, const double b, const double epsilon) const
-	{
-		return fabs(a - b) > epsilon;
-	}
 
 	std::string build_json(const GeneralSimData& current);
 

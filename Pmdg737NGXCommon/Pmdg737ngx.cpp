@@ -2,6 +2,7 @@
 #include "logger/logger.h"
 
 extern logger LOG;
+bool has_changed(const double a, const double b, const double epsilon);
 
 using json = nlohmann::json;
 bool B737ngx::initialization_requested = false;
@@ -226,6 +227,7 @@ std::string B737ngx::initialize(const AIRCRAFT_DATA_TYPE & data)
 	js["EFIS_MinsSelBARO_2"] = data.EFIS_MinsSelBARO[1];
 	js["EFIS_BaroSelHPA_1"] = data.EFIS_BaroSelHPA[0];
 	js["EFIS_BaroSelHPA_2"] = data.EFIS_BaroSelHPA[1];
+	js["MAIN_BrakePressNeedle"] = data.MAIN_BrakePressNeedle;
 	js["MAIN_MainPanelDUSel_1"] = data.MAIN_MainPanelDUSel[0];
 	js["MAIN_MainPanelDUSel_2"] = data.MAIN_MainPanelDUSel[1];
 	js["MAIN_LowerDUSel_1"] = data.MAIN_LowerDUSel[0];
@@ -699,6 +701,11 @@ std::string B737ngx::buildJsonPmdg737(const AIRCRAFT_DATA_TYPE & data)
 		ngxData.LTS_WheelWellSw = data.LTS_WheelWellSw;
 		js["LTS_WheelWellSw"] = data.LTS_WheelWellSw;
 	}
+	if (has_changed(ngxData.MAIN_BrakePressNeedle, data.MAIN_BrakePressNeedle, 200.0)) {
+		ngxData.MAIN_BrakePressNeedle == data.MAIN_BrakePressNeedle;
+			js["MAIN_BrakePressNeedle"] = data.MAIN_BrakePressNeedle;
+	}
+
 	if (ngxData.MAIN_NoseWheelSteeringSwNORM != data.MAIN_NoseWheelSteeringSwNORM) {
 		ngxData.MAIN_NoseWheelSteeringSwNORM = data.MAIN_NoseWheelSteeringSwNORM;
 		js["MAIN_NoseWheelSteeringSwNORM"] = data.MAIN_NoseWheelSteeringSwNORM;
