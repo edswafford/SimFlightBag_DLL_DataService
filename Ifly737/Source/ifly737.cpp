@@ -375,8 +375,8 @@ std::string Ifly737::initialize()
 	//	js["EFIS_BaroSelHPA_2"] = shareMemSDK->EFIS_BaroSelHPA[1] != 0;
 	js["MAIN_MainPanelDUSel_1"] = shareMemSDK->Main_Panel_DU_CAPT_Switches_Status;
 	js["MAIN_MainPanelDUSel_2"] = shareMemSDK->Main_Panel_DU_FO_Switches_Status;
-	//	js["MAIN_LowerDUSel_1"] = Lower_DU_Switches_Status;
-	//	js["MAIN_LowerDUSel_2"] = Lower_DU_Switches_Status;
+	js["MAIN_LowerDUSel_1"] = shareMemSDK->Lower_DU_Switches_Status;;
+	js["MAIN_LowerDUSel_2"] = shareMemSDK->Lower_DU_Switches_Status;;
 	//	js["MAIN_DisengageTestSelector_1"] = shareMemSDK->MAIN_DisengageTestSelector[0];
 	//	js["MAIN_DisengageTestSelector_2"] = shareMemSDK->MAIN_DisengageTestSelector[1];
 	js["FIRE_OvhtDetSw_1"] = shareMemSDK->OVHT_DET_1_Switches_Status;
@@ -1218,11 +1218,9 @@ std::string Ifly737::buildJsonIfly737()
 	if (ngxData.Lower_DU_Switches_Status != shareMemSDK->Lower_DU_Switches_Status) {
 		ngxData.Lower_DU_Switches_Status = shareMemSDK->Lower_DU_Switches_Status;
 		js["MAIN_LowerDUSel_1"] = shareMemSDK->Lower_DU_Switches_Status;
-	}
-	if (ngxData.Lower_DU_Switches_Status != shareMemSDK->Lower_DU_Switches_Status) {
-		ngxData.Lower_DU_Switches_Status = shareMemSDK->Lower_DU_Switches_Status;
 		js["MAIN_LowerDUSel_2"] = shareMemSDK->Lower_DU_Switches_Status;
 	}
+
 	//if (ngxData.MAIN_DisengageTestSelector[0] != shareMemSDK->MAIN_DisengageTestSelector[0]) {
 	//	ngxData.MAIN_DisengageTestSelector[0] = shareMemSDK->MAIN_DisengageTestSelector[0];
 	//	js["MAIN_DisengageTestSelector_1"] = shareMemSDK->MAIN_DisengageTestSelector[0] != 0;
