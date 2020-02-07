@@ -285,7 +285,7 @@ std::string Ifly737::initialize()
 	//	js["MAIN_RMISelector1_VOR"] = shareMemSDK->MAIN_RMISelector1_VOR;
 	//	js["MAIN_RMISelector2_VOR"] = shareMemSDK->MAIN_RMISelector2_VOR;
 	js["MAIN_N1SetSelector"] = shareMemSDK->N1_Set_Status;
-	js["MAIN_SpdRefSelector"] = shareMemSDK->N1_Set_Status;
+	js["MAIN_SpdRefSelector"] = shareMemSDK->SPD_Ref_Status;
 	js["MAIN_FuelFlowSelector"] = shareMemSDK->Fuel_Flow_Status;
 	js["MAIN_AutobrakeSelector"] = shareMemSDK->Autobrake_Switches_Status;
 	js["MAIN_GearLever"] = shareMemSDK->Gear_Lever_Status;
@@ -301,7 +301,7 @@ std::string Ifly737::initialize()
 	//	js["XPDR_ModeSel"] = shareMemSDK->XPDR_ModeSel;
 	js["TRIM_StabTrimSw_NORMAL"] = shareMemSDK->Stabilizer_Trim_Switch_Status != 0;
 	//	js["PED_FltDkDoorSel"] = shareMemSDK->PED_FltDkDoorSel != 0;
-	//	js["IRS_aligned"] = shareMemSDK->IRS_aligned != 0;
+		js["IRS_aligned"] = shareMemSDK->IRU_1_STATUE == 2 && shareMemSDK->IRU_2_STATUE == 2;
 	//	js["AircraftModel"] = shareMemSDK->AircraftModel;
 	//	js["WeightInKg"] = shareMemSDK->WeightInKg;
 	//	js["GPWS_V1CallEnabled"] = shareMemSDK->GPWS_V1CallEnabled != 0;
@@ -611,7 +611,7 @@ std::string Ifly737::initialize()
 	js["MCP_FDSw_2"] = shareMemSDK->FD_right_Switches_Status != 0;
 	js["EFIS_ModeSel_1"] = shareMemSDK->FO_ND_Mode_status;
 	js["EFIS_ModeSel_2"] = shareMemSDK->FO_ND_Mode_status;
-	js["MCP_DisengageBar"] = shareMemSDK->DISENGAGE_Bar_Switches_Status != 0;
+	js["MCP_DisengageBar"] = shareMemSDK->DISENGAGE_Bar_Switches_Status == 0;
 
 	return js.dump();
 }
@@ -626,7 +626,7 @@ std::string Ifly737::buildJsonIfly737()
 
 	if (ngxData.DISENGAGE_Bar_Switches_Status != shareMemSDK->DISENGAGE_Bar_Switches_Status) {
 		ngxData.DISENGAGE_Bar_Switches_Status = shareMemSDK->DISENGAGE_Bar_Switches_Status;
-		js["MCP_DisengageBar"] = shareMemSDK->DISENGAGE_Bar_Switches_Status != 0;
+		js["MCP_DisengageBar"] = shareMemSDK->DISENGAGE_Bar_Switches_Status == 0;
 	}
 	if (ngxData.FO_ND_Mode_status != shareMemSDK->FO_ND_Mode_status)
 	{
@@ -863,9 +863,9 @@ std::string Ifly737::buildJsonIfly737()
 		ngxData.N1_Set_Status = shareMemSDK->N1_Set_Status;
 		js["MAIN_N1SetSelector"] = shareMemSDK->N1_Set_Status;
 	}
-	if (ngxData.N1_Set_Status != shareMemSDK->N1_Set_Status) {
-		ngxData.N1_Set_Status = shareMemSDK->N1_Set_Status;
-		js["MAIN_SpdRefSelector"] = shareMemSDK->N1_Set_Status;
+	if (ngxData.SPD_Ref_Status != shareMemSDK->SPD_Ref_Status) {
+		ngxData.SPD_Ref_Status = shareMemSDK->SPD_Ref_Status;
+		js["MAIN_SpdRefSelector"] = shareMemSDK->SPD_Ref_Status;
 	}
 	if (ngxData.Fuel_Flow_Status != shareMemSDK->Fuel_Flow_Status) {
 		ngxData.Fuel_Flow_Status = shareMemSDK->Fuel_Flow_Status;

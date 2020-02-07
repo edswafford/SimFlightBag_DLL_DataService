@@ -259,6 +259,10 @@ ProcessResult SimDataService::process(std::shared_ptr<AsyncQueue<std::string>> c
 							}
 							data_initialized = true;
 							process_result = ProcessResult::initialized;
+							if (msg_queue->available()) {
+								json js = { {"IFly 737", "Sent Initial Data"} };
+								msg_queue->push(js.dump());
+							}
 						}
 					}
 					else {
